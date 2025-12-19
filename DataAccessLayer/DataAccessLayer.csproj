@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
+    <Compile Include="Abstract\IEducationDal.cs" />
+    <Compile Include="Abstract\IGenericDal.cs" />
+    <Compile Include="Abstract\IPortfolyoDal.cs" />
+    <Compile Include="Abstract\IPortfolyoImagesDal.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
+    <Compile Include="Abstract\ISkillsDal.cs" />
+    <Compile Include="Abstract\ISocialMediaDal.cs" />
     <Compile Include="Configuration\AboutConfig.cs" />
     <Compile Include="Configuration\AdminConfig.cs" />
     <Compile Include="Configuration\EducationConfig.cs" />
@@ -60,6 +69,15 @@
     <Compile Include="Configuration\SkillsConfig.cs" />
     <Compile Include="Configuration\SocialMediaConfig.cs" />
     <Compile Include="Context\MYOContext.cs" />
+    <Compile Include="EFramework\EFAboutDal.cs" />
+    <Compile Include="EFramework\EFAdminDal.cs" />
+    <Compile Include="EFramework\EFEducationDal.cs" />
+    <Compile Include="EFramework\EFPortfolyoDal.cs" />
+    <Compile Include="EFramework\EFPortfolyoImagesDal.cs" />
+    <Compile Include="EFramework\EFRoleDal.cs" />
+    <Compile Include="EFramework\EFSkillsDal.cs" />
+    <Compile Include="EFramework\EFSocialMediaDal.cs" />
+    <Compile Include="GenericRepo\GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
