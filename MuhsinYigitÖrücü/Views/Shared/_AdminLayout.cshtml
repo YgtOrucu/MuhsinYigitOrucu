@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    Layout = null;
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="admin-wrapper">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="profile-box">
+                <img src="~/Content/Admin/images/avatar.png" alt="Admin">
+                <h6>Muhsin Yiğit</h6>
+                <span>Administrator</span>
+            </div>
+
+            <ul class="menu">
+                <li><a href="#"><i data-feather="home"></i>Dashboard</a></li>
+                <li><a href="#"><i data-feather="folder"></i>Projects</a></li>
+                <li><a href="#"><i data-feather="award"></i>Skills</a></li>
+                <li><a href="#"><i data-feather="users"></i>Users</a></li>
+                <li><a href="#"><i data-feather="settings"></i>Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+            </header>
+
+            <!-- CONTENT -->
+            <main class="content">
+                @RenderBody()
+                <div style="height:1200px"></div>
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                Designed & Developed by <strong>Muhsin Yiğit Örücü</strong> © 2025
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="~/Content/bootstrap.js"></script>
+    <script src="~/Content/js/admin.js"></script>
+
+</body>
+</html>
