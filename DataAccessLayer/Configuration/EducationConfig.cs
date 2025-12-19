@@ -15,6 +15,7 @@ namespace DataAccessLayer.Configuration
         {
             HasKey(x => x.EducationID);
             Property(x => x.EducationID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(x => x.HeadingName).HasColumnType("varchar").HasMaxLength(25);
             Property(x => x.SubHeadingName).HasColumnType("varchar").HasMaxLength(25);
             Property(x => x.SubHeadingName1).HasColumnType("varchar").HasMaxLength(25);
             Property(x => x.Description).HasColumnType("varchar").HasMaxLength(250);
