@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concreate
 {
-    [Table("SocialMedia")]
-    public class SocialMedia
+    [Table("Skills")]
+    public class Skills
     {
-        public int SocialMediaID { get; set; }
-        public string Href { get; set; }
-        public string IconAddress { get; set; }
+        public int SkillsID { get; set; }
+        public string SkillsName { get; set; }
+        public string SkillsPercentage { get; set; }
         public bool Status { get; set; }
 
     }
