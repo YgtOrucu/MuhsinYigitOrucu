@@ -1936,6 +1936,7 @@
     <Content Include="Content\css\simpleLightbox.css" />
     <Content Include="Content\css\snow.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\close.png" />
     <Content Include="Content\images\contact.jpg" />

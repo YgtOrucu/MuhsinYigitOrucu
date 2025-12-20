@@ -1,0 +1,288 @@
+﻿
+/* ===============================
+   SIDEBAR ROOT
+   =============================== */
+.sidebar {
+    padding: 12px 0;
+}
+
+    /* ===============================
+   USER PANEL – FINAL AESTHETIC
+   =============================== */
+
+    .sidebar .user-panel {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 0 12px 20px;
+        padding: 16px;
+        border-radius: 18px;
+        background: linear-gradient( 135deg, rgba(99,102,241,.18), rgba(34,211,238,.12) );
+        border: 1px solid rgba(255,255,255,.08);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0,0,0,.35);
+        transition: all .3s ease;
+    }
+
+        /* Hover micro interaction */
+        .sidebar .user-panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(0,0,0,.45);
+        }
+
+        /* ===============================
+   AVATAR
+   =============================== */
+
+        .sidebar .user-panel .image img {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 10px 24px rgba(0,0,0,.45);
+            border: 2px solid rgba(255,255,255,.15);
+        }
+
+        /* ===============================
+   INFO AREA
+   =============================== */
+
+        .sidebar .user-panel .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            /* Username */
+            .sidebar .user-panel .info a {
+                font-size: 14px;
+                font-weight: 600;
+                color: #f8fafc;
+                line-height: 1.2;
+                margin-bottom: 4px;
+            }
+
+        /* Role badge */
+        .sidebar .user-panel .user-role {
+            width: fit-content;
+            padding: 3px 10px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .3px;
+            border-radius: 999px;
+            background: rgba(99,102,241,.25);
+            color: #c7d2fe;
+        }
+
+/* ===============================
+   MENU LIST
+   =============================== */
+.sidebar .nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ===============================
+   MENU ITEM
+   =============================== */
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    margin: 0 12px;
+    border-radius: 16px;
+    color: #c7d2fe !important;
+    font-weight: 500;
+    position: relative;
+    transition: all .25s ease;
+}
+
+    /* ICON CONTAINER */
+    .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link .nav-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,.06);
+        color: #22d3ee;
+        font-size: 15px;
+        transition: all .25s ease;
+    }
+
+/* TEXT */
+.sidebar-dark-primary .nav-sidebar p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: .2px;
+}
+
+/* ===============================
+   HOVER
+   =============================== */
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover {
+    background: rgba(99,102,241,.18) !important;
+    transform: translateX(6px);
+}
+
+    .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover .nav-icon {
+        background: linear-gradient(135deg, #6366f1, #22d3ee);
+        color: #fff;
+        box-shadow: 0 6px 18px rgba(99,102,241,.45);
+    }
+
+/* ===============================
+   ACTIVE
+   =============================== */
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background: linear-gradient(135deg, #6366f1, #22d3ee) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 30px rgba(99,102,241,.45);
+}
+
+    .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active .nav-icon {
+        background: rgba(255,255,255,.2);
+        color: #fff;
+    }
+
+    /* LEFT GLOW BAR */
+    .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active::before {
+        content: '';
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        width: 6px;
+        height: 70%;
+        background: linear-gradient(180deg, #22d3ee, #6366f1);
+        border-radius: 0 10px 10px 0;
+        transform: translateY(-50%);
+    }
+
+/* ===============================
+   LOGOUT (last item danger)
+   =============================== */
+.sidebar-dark-primary .nav-sidebar > .nav-item:last-child .nav-link:hover {
+    background: rgba(239,68,68,.18) !important;
+}
+
+    .sidebar-dark-primary .nav-sidebar > .nav-item:last-child .nav-link:hover .nav-icon {
+        background: rgba(239,68,68,.9);
+        color: #fff;
+    }
+
+/* ===============================
+   SMART COLOR HOVERS
+   =============================== */
+
+/* Admin – mor (yetki / power) */
+.nav-sidebar > .nav-item:nth-child(1) .nav-link:hover {
+    background: rgba(139, 92, 246, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(1) .nav-link:hover .nav-icon {
+        background: #8b5cf6;
+        color: #fff;
+    }
+
+/* Roles – indigo (organizasyon) */
+.nav-sidebar > .nav-item:nth-child(2) .nav-link:hover {
+    background: rgba(99, 102, 241, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(2) .nav-link:hover .nav-icon {
+        background: #6366f1;
+        color: #fff;
+    }
+
+/* About – cyan (bilgi) */
+.nav-sidebar > .nav-item:nth-child(3) .nav-link:hover {
+    background: rgba(34, 211, 238, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(3) .nav-link:hover .nav-icon {
+        background: #22d3ee;
+        color: #fff;
+    }
+
+/* Social Media – sky blue (iletişim) */
+.nav-sidebar > .nav-item:nth-child(4) .nav-link:hover {
+    background: rgba(56, 189, 248, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(4) .nav-link:hover .nav-icon {
+        background: #38bdf8;
+        color: #fff;
+    }
+
+/* Education – emerald (growth) */
+.nav-sidebar > .nav-item:nth-child(5) .nav-link:hover {
+    background: rgba(16, 185, 129, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(5) .nav-link:hover .nav-icon {
+        background: #10b981;
+        color: #fff;
+    }
+
+/* Skills – teal (tech) */
+.nav-sidebar > .nav-item:nth-child(6) .nav-link:hover {
+    background: rgba(20, 184, 166, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(6) .nav-link:hover .nav-icon {
+        background: #14b8a6;
+        color: #fff;
+    }
+
+/* Jobs – amber (work) */
+.nav-sidebar > .nav-item:nth-child(7) .nav-link:hover {
+    background: rgba(245, 158, 11, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(7) .nav-link:hover .nav-icon {
+        background: #f59e0b;
+        color: #fff;
+    }
+
+/* Portfolio – violet (creative) */
+.nav-sidebar > .nav-item:nth-child(8) .nav-link:hover {
+    background: rgba(124, 58, 237, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(8) .nav-link:hover .nav-icon {
+        background: #7c3aed;
+        color: #fff;
+    }
+
+/* Portfolio Images – pink (visual) */
+.nav-sidebar > .nav-item:nth-child(9) .nav-link:hover {
+    background: rgba(236, 72, 153, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(9) .nav-link:hover .nav-icon {
+        background: #ec4899;
+        color: #fff;
+    }
+
+/* Go to Website – blue (external) */
+.nav-sidebar > .nav-item:nth-child(10) .nav-link:hover {
+    background: rgba(59, 130, 246, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(10) .nav-link:hover .nav-icon {
+        background: #3b82f6;
+        color: #fff;
+    }
+
+/* Logout – red (danger) */
+.nav-sidebar > .nav-item:nth-child(11) .nav-link:hover {
+    background: rgba(239, 68, 68, .2) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(11) .nav-link:hover .nav-icon {
+        background: #ef4444;
+        color: #fff;
+    }
