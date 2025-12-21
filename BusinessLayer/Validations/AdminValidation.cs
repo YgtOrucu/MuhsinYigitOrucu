@@ -23,7 +23,7 @@ namespace BusinessLayer.Validations
                 Matches(@"^[^@\s]+@[^@\s]+\.[^@\s]+$").WithMessage(ValidationMessages.OnlyLetters("Mail"));
 
             RuleFor(x => x.Password).NotEmpty().WithMessage(ValidationMessages.NotEmpty("Şifre")).
-                MaximumLength(25).WithMessage(ValidationMessages.MaxLength(25));
+                MaximumLength(65).WithMessage(ValidationMessages.MaxLength(65));
         }
     }
 }

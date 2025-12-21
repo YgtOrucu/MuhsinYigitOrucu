@@ -74,14 +74,14 @@
             color: #c7d2fe;
         }
 
-/* ===============================
+    /* ===============================
    MENU LIST
    =============================== */
-.sidebar .nav-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
+    .sidebar .nav-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
 
 /* ===============================
    MENU ITEM
@@ -396,6 +396,9 @@
 .btn-edit {
     background: #f1f5f9;
     border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 34px;
     height: 34px;
     border-radius: 8px;
@@ -498,11 +501,29 @@
     margin: 10px 0;
 }
 
- .btn-primary:hover {
-     background: #6a46f7;
-     transform: translateY(-1px);
- }
+    .btn-primary:hover {
+        background: #6a46f7;
+        transform: translateY(-1px);
+    }
 
+.btn-danger {
+    background: #FF0033;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 14px;
+    transition: all .2s ease;
+    margin: 10px 0;
+}
+
+    .btn-danger:hover {
+        background: #FF0033;
+        transform: translateY(-1px);
+    }
+
+.modal-footer{
+    display:flex;
+    column-gap:30px;
+}
 /*Error CSS*/
 .error-card {
     background: #ffffff;

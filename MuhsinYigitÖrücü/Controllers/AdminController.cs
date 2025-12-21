@@ -24,6 +24,7 @@ namespace MuhsinYigitÖrücü.Controllers
             _adminService = new AdminManager(new EFAdminDal(), new AdminValidation());
         }
         #endregion
+
         #region AdminOperations
 
         #region GetList
@@ -55,8 +56,47 @@ namespace MuhsinYigitÖrücü.Controllers
             catch (ValidationException ex)
             {
                 var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
-                TempData["AdminError"] = errormessage;
+                TempData["Error"] = errormessage;
                 TempData["RedirectUrl"] = Url.Action("Admin", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+            }
+        }
+        #endregion
+
+        #region Edit
+        [HttpGet]
+        public ActionResult AdminEdit(int id)
+        {
+            #region GetRoleTypeForDropdownList
+            var getRoleType = context.Roles.Select(x => new SelectListItem
+            {
+                Value = x.RoleID.ToString(),
+                Text = x.RoleType
+            });
+            ViewBag.RoleType = getRoleType;
+            #endregion
+            var values = _adminService.TGetByID(id);
+            return View("AdminEdit", values);
+        }
+
+        [HttpPost]
+        public ActionResult AdminUpdate(Admin a)
+        {
+            try
+            {
+                var updatedvalues = _adminService.TGetByID(a.AdminID);
+                updatedvalues.NameSurname = a.NameSurname;
+                updatedvalues.Password = a.Password;
+                updatedvalues.Status = a.Status;
+                updatedvalues.RoleID = a.RoleID;
+                _adminService.TUpdate(updatedvalues);
+                return RedirectToAction("Admin");
+            }
+            catch (ValidationException ex)
+            {
+                var errorMessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errorMessage;
+                TempData["RedirectUrl"] = Url.Action("Admin","Admin");
                 return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
             }
         }

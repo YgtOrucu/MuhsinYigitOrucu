@@ -11,7 +11,7 @@
             <tr>
                 <th>Name Surname</th>
                 <th>E-Mail</th>
-                <th>Password</th>
+                <th>Password Hash</th>
                 <th>Role</th>
                 <th>Status</th>
                 <th>Edit</th>
@@ -23,15 +23,22 @@
                 <tr>
                     <td>@item.NameSurname</td>
                     <td>@item.MailAddress</td>
-                    <td>@item.Password.Substring(0,20)</td>
+                    <td>@(item.Password.Length > 20 ? item.Password.Substring(0,20) : item.Password)</td>
                     <td>@item.Role.RoleType</td>
+                    @if (item.Status)
+                    {
+                        <td>
+                            <span class="status active">Active</span>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <span class="status passive">Passive</span>
+                        </td>
+                    }
                     <td>
-                        <span class="status active">@(item.Status ? "Active" : "Pasive")</span>
-                    </td>
-                    <td>
-                        <button class="btn-edit">
-                            <i class="fas fa-pen"></i>
-                        </button>
+                        <a href="@Url.Action("AdminEdit", "Admin", new {id = item.AdminID})" class="btn-edit"><i class="fas fa-pen"></i></a>
                     </td>
                 </tr>
             }
@@ -72,7 +79,7 @@
 
                     <div class="mb-3">
                         <label for="RoleID" class="form-label">Role Type</label>
-                        @Html.DropDownList("RoleID",(IEnumerable<SelectListItem>)ViewBag.RoleType,new { @class = "form-control" })
+                        @Html.DropDownList("RoleID", (IEnumerable<SelectListItem>)ViewBag.RoleType, new { @class = "form-control" })
                     </div>
 
                     <label for="AdminStatus" class="form-label">Status</label>

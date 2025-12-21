@@ -60,6 +60,8 @@ namespace BusinessLayer.Concreate
         {
             var result = _validationRulesAdmin.Validate(entity);
             if (!result.IsValid) throw new ValidationException(result.Errors);
+            List<string> hashPasswordandMail = HidePasswordandMail(entity.Password, entity.MailAddress);
+            entity.Password = hashPasswordandMail[0].ToString();
             _adminDal.Update(entity);
         }
 

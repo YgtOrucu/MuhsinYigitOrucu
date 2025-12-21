@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "ErrorPageForAdminPages";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    var errormessage = TempData["AdminError"] as string;
+    var errormessage = TempData["Error"] as string;
     var Action = TempData["RedirectUrl"] as string;
 }
 
