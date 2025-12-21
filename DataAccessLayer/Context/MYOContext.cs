@@ -17,8 +17,9 @@ namespace DataAccessLayer.Context
         public DbSet<Portfolyo> Portfolyos { get; set; }
         public DbSet<PortfolyoImages> PortfolyoImages { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<Skills> Skills  { get; set; }
-        public DbSet<SocialMedia> SocialMedias  { get; set; }
+        public DbSet<Skills> Skills { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,6 +32,7 @@ namespace DataAccessLayer.Context
             modelBuilder.Configurations.Add(new RoleConfig());
             modelBuilder.Configurations.Add(new SkillsConfig());
             modelBuilder.Configurations.Add(new SocialMediaConfig());
+            modelBuilder.Configurations.Add(new ExperienceConfig());
         }
     }
 }

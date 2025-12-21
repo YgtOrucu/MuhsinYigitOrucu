@@ -18,7 +18,6 @@ namespace DataAccessLayer.Configuration
             Property(x => x.HeadingName).HasColumnType("varchar").HasMaxLength(25);
             Property(x => x.SubHeadingName).HasColumnType("varchar").HasMaxLength(25);
             Property(x => x.SubHeadingName1).HasColumnType("varchar").HasMaxLength(25);
-            Property(x => x.Description).HasColumnType("varchar").HasMaxLength(250);
             Property(x => x.Date).HasColumnType("varchar").HasMaxLength(50);
         }
     }

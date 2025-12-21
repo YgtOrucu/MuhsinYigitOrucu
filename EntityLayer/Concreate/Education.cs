@@ -14,7 +14,6 @@ namespace EntityLayer.Concreate
         public string HeadingName { get; set; }
         public string SubHeadingName { get; set; }
         public string SubHeadingName1 { get; set; }
-        public string Description { get; set; }
         public string Date { get; set; }
         public bool Status { get; set; }
     }

@@ -53,6 +53,7 @@
     <Compile Include="Abstract\IAboutService.cs" />
     <Compile Include="Abstract\IAdminService.cs" />
     <Compile Include="Abstract\IEducationService.cs" />
+    <Compile Include="Abstract\IExperienceService.cs" />
     <Compile Include="Abstract\IGenericService.cs" />
     <Compile Include="Abstract\IPortfolyoImagesService.cs" />
     <Compile Include="Abstract\IPortfolyoService.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Concreate\AboutManager.cs" />
     <Compile Include="Concreate\AdminManager.cs" />
     <Compile Include="Concreate\EducationManager.cs" />
+    <Compile Include="Concreate\ExperienceManager.cs" />
     <Compile Include="Concreate\PortfolyoImagesManager.cs" />
     <Compile Include="Concreate\PortfolyoManager.cs" />
     <Compile Include="Concreate\RoleManager.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Validations\AboutValidations.cs" />
     <Compile Include="Validations\AdminValidation.cs" />
     <Compile Include="Validations\EducationValidation.cs" />
+    <Compile Include="Validations\ExperienceValidation.cs" />
     <Compile Include="Validations\PortfolyoValidation.cs" />
     <Compile Include="Validations\SkillsValidation.cs" />
     <Compile Include="Validations\ValidationMessages.cs" />

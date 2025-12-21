@@ -54,6 +54,7 @@
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\IEducationDal.cs" />
+    <Compile Include="Abstract\IExperienceDal.cs" />
     <Compile Include="Abstract\IGenericDal.cs" />
     <Compile Include="Abstract\IPortfolyoDal.cs" />
     <Compile Include="Abstract\IPortfolyoImagesDal.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Configuration\AboutConfig.cs" />
     <Compile Include="Configuration\AdminConfig.cs" />
     <Compile Include="Configuration\EducationConfig.cs" />
+    <Compile Include="Configuration\ExperienceConfig.cs" />
     <Compile Include="Configuration\PortfolyoConfig.cs" />
     <Compile Include="Configuration\PortfolyoImageConfig.cs" />
     <Compile Include="Configuration\RoleConfig.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="EFramework\EFAboutDal.cs" />
     <Compile Include="EFramework\EFAdminDal.cs" />
     <Compile Include="EFramework\EFEducationDal.cs" />
+    <Compile Include="EFramework\EFExperienceDal.cs" />
     <Compile Include="EFramework\EFPortfolyoDal.cs" />
     <Compile Include="EFramework\EFPortfolyoImagesDal.cs" />
     <Compile Include="EFramework\EFRoleDal.cs" />
@@ -89,6 +92,10 @@
     <Compile Include="Migrations\202512211113439_ChangedPasswordColumnLenghtToAdminTable.cs" />
     <Compile Include="Migrations\202512211113439_ChangedPasswordColumnLenghtToAdminTable.Designer.cs">
       <DependentUpon>202512211113439_ChangedPasswordColumnLenghtToAdminTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.cs" />
+    <Compile Include="Migrations\202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.Designer.cs">
+      <DependentUpon>202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512211113439_ChangedPasswordColumnLenghtToAdminTable.resx">
       <DependentUpon>202512211113439_ChangedPasswordColumnLenghtToAdminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.resx">
+      <DependentUpon>202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

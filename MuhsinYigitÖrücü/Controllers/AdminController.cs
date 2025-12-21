@@ -183,6 +183,59 @@ namespace MuhsinYigitÖrücü.Controllers
         }
         #endregion
 
+        #region Add
+        [HttpPost]
+        public ActionResult EducationAdd(Education e)
+        {
+            try
+            {
+                _educationService.TInsert(e);
+                return RedirectToAction("Education");
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Education", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+
+            }     
+        }
+        #endregion
+
+        #region EditAndUpdate
+
+        public ActionResult EducationEdit(int id)
+        {
+            var values = _educationService.TGetByID(id);
+            return View("EducationEdit", values);
+        }
+        [HttpPost]
+        public ActionResult EducationUpdate(Education e)
+        {
+            try
+            {
+                var updatedvalues = _educationService.TGetByID(e.EducationID);
+
+                updatedvalues.HeadingName = e.HeadingName;
+                updatedvalues.SubHeadingName = e.SubHeadingName;
+                updatedvalues.SubHeadingName1 = e.SubHeadingName1;
+                updatedvalues.Date = e.Date;
+                updatedvalues.Status = e.Status;
+                _educationService.TUpdate(updatedvalues);
+                return RedirectToAction("Education");
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Education", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+            }
+          
+        }
+        #endregion
+
         #endregion
     }
 }

@@ -21,17 +21,12 @@ namespace BusinessLayer.Validations
                 MaximumLength(25).WithMessage(ValidationMessages.MaxLength(25)).
                 Matches("^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$").WithMessage(ValidationMessages.OnlyLetters("Alt Başlık"));
 
-            RuleFor(x => x.Description).NotEmpty().WithMessage(ValidationMessages.NotEmpty("Açıklama")).
-               MaximumLength(250).WithMessage(ValidationMessages.MaxLength(250)).
-               Matches("^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$").WithMessage(ValidationMessages.OnlyLetters("Açıklama"));
-
             RuleFor(x => x.SubHeadingName1).NotEmpty().WithMessage(ValidationMessages.NotEmpty("Alt Başlık")).
                MaximumLength(25).WithMessage(ValidationMessages.MaxLength(25)).
                Matches("^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$").WithMessage(ValidationMessages.OnlyLetters("Alt Başlık"));
 
             RuleFor(x => x.Date).NotEmpty().WithMessage(ValidationMessages.NotEmpty("Tarih")).
-               MaximumLength(25).WithMessage(ValidationMessages.MaxLength(25)).
-               Matches("^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$").WithMessage(ValidationMessages.OnlyLetters("Tarih"));
+               MaximumLength(25).WithMessage(ValidationMessages.MaxLength(25));
         }
     }
 }
