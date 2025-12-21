@@ -432,6 +432,15 @@
     border: 2px solid #e5e7eb;
 }
 
+.user-image1 {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+    border: 2px solid #e5e7eb;
+}
+
 .user-name {
     font-size: 14px;
 }

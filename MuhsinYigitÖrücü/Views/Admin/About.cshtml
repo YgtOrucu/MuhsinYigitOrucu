@@ -1,0 +1,119 @@
+﻿@using EntityLayer.Concreate
+@model List<About>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-wrapper">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Name Surname</th>
+                <th>Job</th>
+                <th>Short Description</th>
+                <th>Long Description</th>
+                <th>Images</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NameSurname</td>
+                    <td>@item.Job</td>
+                    <td>@(item.ShortDescription.Length < 10 ? item.ShortDescription : item.ShortDescription.Substring(0,10))...</td>
+                    <td>@(item.LongDescription.Length < 65 ? item.LongDescription : item.LongDescription.Substring(0,65))...</td>
+                    <td>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <img alt="Avatar" class="user-image1" src="@item.Image">
+                            </li>
+                        </ul>
+                    </td>
+                    @if (item.Status)
+                    {
+                        <td>
+                            <span class="status active">Active</span>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <span class="status passive">Passive</span>
+                        </td>
+                    }
+                    <td>
+                        <a href="@Url.Action("AboutEdit", "Admin", new {id = item.AboutID})" class="btn-edit"><i class="fas fa-pen"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="table-header">
+    <button class="btn-add" data-toggle="modal" data-target="#modal1">
+        <i class="fas fa-plus"></i> Add
+    </button>
+</div>
+
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal1Label" style="margin:0 0 0 9rem">Add About</h2>
+            </div>
+
+            <form method="post" action="~/Admin/AboutAdd">
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="NameSurname" class="form-label">Name Surname</label>
+                        <input type="text" name="NameSurname" id="NameSurname" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Job" class="form-label">Job</label>
+                        <input type="text" name="Job" id="Job" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ShortDescription" class="form-label">Short Description</label>
+                        @Html.TextArea("ShortDescription", null, 4, 0, new { @class = "form-control", placeholder = "Short description..." })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="LongDescription" class="form-label">Long Description</label>
+                        @Html.TextArea("LongDescription", null, 4, 0, new { @class = "form-control", placeholder = "Long description..." })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Image" class="form-label">Image Url</label>
+                        <input type="text" name="Image" id="Image" class="form-control">
+                    </div>
+
+                    <label for="AdminStatus" class="form-label">Status</label>
+                    <div class="form-check-inline">
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumAktif" name="Status" type="radio" value="True">
+                            <label class="form-check-label" for="durumAktif">Active</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumPasif" name="Status" type="radio" value="False">
+                            <label class="form-check-label" for="durumPasif">Pasive</label>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

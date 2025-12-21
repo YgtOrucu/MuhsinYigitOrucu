@@ -29,15 +29,11 @@ namespace BusinessLayer.Validations
             RuleFor(x => x.ShortDescription)
                 .NotEmpty().WithMessage(ValidationMessages.NotEmpty("Kısa Açıklama"))
                 .MinimumLength(5).WithMessage(ValidationMessages.MinLength(5))
-                .MaximumLength(50).WithMessage(ValidationMessages.MaxLength(50))
-                .Matches("^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$")
-                .WithMessage(ValidationMessages.OnlyLetters("Kısa Açıklama"));
+                .MaximumLength(50).WithMessage(ValidationMessages.MaxLength(50));
 
             RuleFor(x => x.LongDescription)
                 .NotEmpty().WithMessage(ValidationMessages.NotEmpty("Uzun Açıklama"))
-                .MinimumLength(5).WithMessage(ValidationMessages.MinLength(5))
-                .Matches("^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$")
-                .WithMessage(ValidationMessages.OnlyLetters("Uzun Açıklama"));
+                .MinimumLength(5).WithMessage(ValidationMessages.MinLength(5));
 
             RuleFor(x => x.Image)
                  .NotEmpty().WithMessage(ValidationMessages.NotEmpty("Resim"));

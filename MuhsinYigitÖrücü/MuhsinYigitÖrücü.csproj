@@ -2274,6 +2274,9 @@
     <Content Include="Views\Admin\Admin.cshtml" />
     <Content Include="Views\ErrorPages\ErrorPageForAdminPages.cshtml" />
     <Content Include="Views\Admin\AdminEdit.cshtml" />
+    <Content Include="Views\Admin\About.cshtml" />
+    <Content Include="Views\Admin\AboutEdit.cshtml" />
+    <Content Include="Views\Admin\Education.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

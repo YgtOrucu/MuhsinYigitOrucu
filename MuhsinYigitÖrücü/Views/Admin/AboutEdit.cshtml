@@ -1,0 +1,57 @@
+﻿@model EntityLayer.Concreate.About
+@{
+    ViewBag.Title = "AboutEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post" action="~/Admin/AboutUpdate">
+    <div class="modal-body">
+        <div class="mb-3">
+            @Html.HiddenFor(x => x.AboutID, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="NameSurname" class="form-label">Name Surname</label>
+            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="Job" class="form-label">Job</label>
+            @Html.TextBoxFor(x => x.Job, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="ShortDescription" class="form-label">Short Description</label>
+            @Html.TextBoxFor(x => x.ShortDescription, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="LongDescription" class="form-label">Long Description</label>
+            @Html.TextBoxFor(x => x.LongDescription, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="Image" class="form-label">Image</label>
+            @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        </div>
+
+        <label for="AdminStatus" class="form-label">Status</label>
+        <div class="form-check-inline">
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, true, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumAktif">Active</label>
+            </div>
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, false, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumPasif">Pasive</label>
+            </div>
+        </div>
+
+        <br />
+    </div>
+    <div class="modal-footer">
+        <a href="@Url.Action("About")" class="btn btn-danger btn-sm">Return</a>
+        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+    </div>
+</form>

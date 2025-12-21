@@ -1,0 +1,114 @@
+﻿@using EntityLayer.Concreate
+@model List<Education>
+@{
+    ViewBag.Title = "Education";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-wrapper">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Heading Name</th>
+                <th>SubHeading Name</th>
+                <th>SubHeading Name1</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.HeadingName</td>
+                    <td>@(item.SubHeadingName.Length > 20 ? item.SubHeadingName.Substring(0,20) : item.SubHeadingName)</td>
+                    <td>@(item.SubHeadingName1.Length > 65 ? item.SubHeadingName1.Substring(0,65) : item.SubHeadingName1)</td>
+                    <td>@item.Date</td>
+                    @if (item.Status)
+                    {
+                        <td>
+                            <span class="status active">Active</span>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <span class="status passive">Passive</span>
+                        </td>
+                    }
+                    <td>
+                        <a href="@Url.Action("EducationEdit", "Admin", new {id = item.EducationID})" class="btn-edit"><i class="fas fa-pen"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="table-header">
+    <button class="btn-add" data-toggle="modal" data-target="#modal1">
+        <i class="fas fa-plus"></i> Add
+    </button>
+</div>
+
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal1Label" style="margin:0 0 0 9rem">Add Admin</h2>
+            </div>
+
+            <form method="post" action="~/Admin/EducationAdd">
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="HeadingName" class="form-label">Heading Name</label>
+                        <input type="text" name="HeadingName" id="HeadingName" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="SubHeadingName" class="form-label">SubHeading Name</label>
+                        <input type="text" name="SubHeadingName" id="SubHeadingName" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="SubHeadingName1" class="form-label">SubHeading Name1</label>
+                        <input type="text" name="SubHeadingName1" id="SubHeadingName1" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Description" class="form-label">Description</label>
+                        @Html.TextArea("Description", null, 4, 0, new { @class = "form-control" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Date" class="form-label">Date</label>
+                        <input type="text" name="Date" id="Date" class="form-control">
+                    </div>
+
+                    <label for="AdminStatus" class="form-label">Status</label>
+                    <div class="form-check-inline">
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumAktif" name="Status" type="radio" value="True">
+                            <label class="form-check-label" for="durumAktif">Active</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumPasif" name="Status" type="radio" value="False">
+                            <label class="form-check-label" for="durumPasif">Pasive</label>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
