@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concreate
 {
-    public class SkillsManager : IGenericService<Skills>
+    public class SkillsManager : ISkillsService
     {
         private readonly ISkillsDal _skillsDal;
         private readonly SkillsValidation _validationRulesSkills;

@@ -12,7 +12,7 @@ using BusinessLayer.Validations;
 
 namespace BusinessLayer.Concreate
 {
-    public class EducationManager : IGenericService<Education>
+    public class EducationManager : IEducationService
     {
         private readonly IEducationDal _educationDal;
         private readonly EducationValidation _validationRulesEducation;

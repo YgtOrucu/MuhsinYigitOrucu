@@ -12,7 +12,7 @@ using BusinessLayer.Validations;
 
 namespace BusinessLayer.Concreate
 {
-    public class AboutManager : IGenericService<About>
+    public class AboutManager : IAboutService
     {
         #region Construction
         private readonly IAboutDal _aboutDal;

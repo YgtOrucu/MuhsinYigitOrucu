@@ -286,3 +286,259 @@
         background: #ef4444;
         color: #fff;
     }
+/* Admin Page */
+:root {
+    --bg: #f8fafc;
+    --table-bg: #ffffff;
+    --header-bg: #f1f5f9;
+    --row-hover: #e0f2fe;
+    --border: #e5e7eb;
+    --text: #0f172a;
+    --muted: #64748b;
+    --active-bg: #dcfce7;
+    --active-text: #15803d;
+    --passive-bg: #fee2e2;
+    --passive-text: #b91c1c;
+}
+
+.table-wrapper {
+    max-width: 97%;
+    overflow-x: auto;
+    border-radius: 14px;
+    background: var(--table-bg);
+    box-shadow: 0 8px 25px rgba(15,23,42,.08);
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+    .modern-table thead th {
+        position: sticky;
+        top: 0;
+        background: var(--header-bg);
+        color: var(--muted);
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid var(--border);
+        font-weight: 600;
+    }
+
+    .modern-table tbody td {
+        padding: 10px 12px; /* sık ama ferah */
+        border-bottom: 1px solid var(--border);
+    }
+
+    .modern-table tbody tr:nth-child(even) {
+        background: #f9fafb;
+    }
+
+    .modern-table tbody tr:hover {
+        background: var(--row-hover);
+        transition: background .15s ease;
+    }
+
+/* Status badge */
+.status {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+    .status.active {
+        background: var(--active-bg);
+        color: var(--active-text);
+    }
+
+    .status.passive {
+        background: var(--passive-bg);
+        color: var(--passive-text);
+    }
+
+/* Header */
+.table-header {
+    margin: 20px 0 14px 0;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 97%;
+}
+
+    .table-header h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+/* Add Button */
+.btn-add {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all .2s ease;
+}
+
+    .btn-add:hover {
+        background: #1d4ed8;
+    }
+
+/* Edit Button */
+.btn-edit {
+    background: #f1f5f9;
+    border: 1px solid #e5e7eb;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .15s ease;
+}
+
+    .btn-edit i {
+        color: #2563eb;
+        font-size: 14px;
+    }
+
+    .btn-edit:hover {
+        background: #e0f2fe;
+        border-color: #93c5fd;
+    }
+
+
+.user-dropdown .nav-link {
+    cursor: pointer;
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.user-image {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+    border: 2px solid #e5e7eb;
+}
+
+.user-name {
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    padding: 6px 0;
+    min-width: 180px;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    color: #0f172a;
+}
+
+    .dropdown-item i {
+        color: #64748b;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f1f5f9;
+    }
+
+    .dropdown-item.logout {
+        color: #b91c1c;
+    }
+
+        .dropdown-item.logout i {
+            color: #b91c1c;
+        }
+
+
+/* Modal arka plan blur efekti */
+.modal.fade .modal-dialog {
+    transition: transform .3s ease-out;
+}
+
+.modal-backdrop.show {
+    backdrop-filter: blur(4px);
+}
+
+/* Modal kutusu */
+.modal-content {
+    border-radius: 18px !important;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+}
+
+/* Başlık */
+.modal-title {
+    font-weight: 600;
+    color: #333;
+}
+/* Button */
+.btn-primary {
+    background: #7b57ff;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 14px;
+    transition: all .2s ease;
+    margin: 10px 0;
+}
+
+ .btn-primary:hover {
+     background: #6a46f7;
+     transform: translateY(-1px);
+ }
+
+/*Error CSS*/
+.error-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    font-family: "Inter", sans-serif;
+}
+
+.error-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #543E95;
+    margin-bottom: 16px;
+}
+
+.error-box {
+    background: #543E95;
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #fecaca;
+}
+
+.return-btn {
+    display: inline-block;
+    padding: 5px 25px;
+    border: 2px solid #543E95;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+/*Error CSS*/

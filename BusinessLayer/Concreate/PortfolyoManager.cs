@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concreate
 {
-    public class PortfolyoManager : IGenericService<Portfolyo>
+    public class PortfolyoManager : IPortfolyoService
     {
         private readonly IPortfolyoDal _portfolyoDal;
         private readonly PortfolyoValidation _validationRulesPortfolyo;

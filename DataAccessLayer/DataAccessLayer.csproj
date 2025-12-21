@@ -82,6 +82,14 @@
     <Compile Include="Migrations\202512191737442__InitialCreate.Designer.cs">
       <DependentUpon>202512191737442__InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512211018329__AddedNewColumntoAdminTable.cs" />
+    <Compile Include="Migrations\202512211018329__AddedNewColumntoAdminTable.Designer.cs">
+      <DependentUpon>202512211018329__AddedNewColumntoAdminTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512211113439_ChangedPasswordColumnLenghtToAdminTable.cs" />
+    <Compile Include="Migrations\202512211113439_ChangedPasswordColumnLenghtToAdminTable.Designer.cs">
+      <DependentUpon>202512211113439_ChangedPasswordColumnLenghtToAdminTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,6 +106,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202512191737442__InitialCreate.resx">
       <DependentUpon>202512191737442__InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512211018329__AddedNewColumntoAdminTable.resx">
+      <DependentUpon>202512211018329__AddedNewColumntoAdminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512211113439_ChangedPasswordColumnLenghtToAdminTable.resx">
+      <DependentUpon>202512211113439_ChangedPasswordColumnLenghtToAdminTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

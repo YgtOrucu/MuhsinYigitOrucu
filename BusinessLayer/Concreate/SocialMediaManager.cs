@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concreate
 {
-    public class SocialMediaManager : IGenericService<SocialMedia>
+    public class SocialMediaManager : ISocialMediaService
     {
         private readonly ISocialMediaDal _socialMediaDal;
         public SocialMediaManager(ISocialMediaDal socialMediaDal)

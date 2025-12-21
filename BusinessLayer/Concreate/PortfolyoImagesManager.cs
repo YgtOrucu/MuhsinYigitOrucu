@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concreate
 {
-    public class PortfolyoImagesManager : IGenericService<PortfolyoImages>
+    public class PortfolyoImagesManager : IPortfolyoImagesService
     {
         private readonly IPortfolyoImagesDal _portfolyoImagesDal;
         public PortfolyoImagesManager (IPortfolyoImagesDal portfolyoImagesDal)

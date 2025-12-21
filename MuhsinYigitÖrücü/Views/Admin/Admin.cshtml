@@ -1,7 +1,99 @@
-﻿
+﻿@using EntityLayer.Concreate
+@model List<Admin>
 @{
     ViewBag.Title = "Admin";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Admin</h2>
+<div class="table-wrapper">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Name Surname</th>
+                <th>E-Mail</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NameSurname</td>
+                    <td>@item.MailAddress</td>
+                    <td>@item.Password.Substring(0,20)</td>
+                    <td>@item.Role.RoleType</td>
+                    <td>
+                        <span class="status active">@(item.Status ? "Active" : "Pasive")</span>
+                    </td>
+                    <td>
+                        <button class="btn-edit">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="table-header">
+    <button class="btn-add" data-toggle="modal" data-target="#modal1">
+        <i class="fas fa-plus"></i> Ekle
+    </button>
+</div>
+
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal1Label" style="margin:0 0 0 9rem">Add Admin</h2>
+            </div>
+
+            <form method="post" action="~/Admin/AdminAdd">
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="NameSurname" class="form-label">Name Surname</label>
+                        <input type="text" name="NameSurname" id="NameSurname" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="MailAddress" class="form-label">Mail Address</label>
+                        <input type="text" name="MailAddress" id="MailAddress" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="text" name="Password" id="Password" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="RoleID" class="form-label">Role Type</label>
+                        @Html.DropDownList("RoleID",(IEnumerable<SelectListItem>)ViewBag.RoleType,new { @class = "form-control" })
+                    </div>
+
+                    <label for="AdminStatus" class="form-label">Status</label>
+                    <div class="form-check-inline">
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumAktif" name="Status" type="radio" value="True">
+                            <label class="form-check-label" for="durumAktif">Active</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumPasif" name="Status" type="radio" value="False">
+                            <label class="form-check-label" for="durumPasif">Pasive</label>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

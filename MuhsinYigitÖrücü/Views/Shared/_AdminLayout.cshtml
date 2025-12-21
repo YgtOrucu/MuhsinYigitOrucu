@@ -32,7 +32,33 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown user-dropdown">
+                    <a class="nav-link d-flex align-items-center" href="#" data-toggle="dropdown">
+                        <img src="https://i.pravatar.cc/40"
+                             class="user-image"
+                             alt="User Image">
+                        <span class="user-name">Yiğit</span>
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </a>
 
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-user mr-2"></i> Hesabım
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item logout">
+                            <i class="fas fa-sign-out-alt mr-2"></i> Çıkış Yap
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- /.navbar -->
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Sidebar -->
@@ -135,7 +161,7 @@
         </aside>
         <!-- /.content -->
         <div class="content-wrapper">
-            <section class="content">
+            <section class="content" style="margin-left:2rem">
                 @RenderBody()
             </section>
             <!-- /.content -->

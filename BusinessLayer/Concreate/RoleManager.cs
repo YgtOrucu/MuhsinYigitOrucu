@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concreate
 {
-    public class RoleManager : IGenericService<Role>
+    public class RoleManager : IRoleService
     {
         private readonly IRoleDal _roleDal;
 
