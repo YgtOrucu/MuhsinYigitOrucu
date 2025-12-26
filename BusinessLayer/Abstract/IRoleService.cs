@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IRoleService : IGenericService<Role>
     {
+        List<GetMembersImageByRoleID> TGetMembersImageByRole();
     }
 }

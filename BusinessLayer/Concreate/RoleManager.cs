@@ -34,6 +34,11 @@ namespace BusinessLayer.Concreate
             return _roleDal.GetListByFilter(filter);
         }
 
+        public List<GetMembersImageByRoleID> TGetMembersImageByRole()
+        {
+            return _roleDal.GetMembersImageByRole();
+        }
+
         public void TInsert(Role entity)
         {
             _roleDal.Insert(entity);

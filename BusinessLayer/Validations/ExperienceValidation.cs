@@ -34,17 +34,12 @@ namespace BusinessLayer.Validations
                 .MinimumLength(5).WithMessage(ValidationMessages.MinLength(5))
                 .MaximumLength(50).WithMessage(ValidationMessages.MaxLength(50));
 
-            RuleFor(x => x.Date)
-               .NotEmpty().WithMessage(ValidationMessages.NotEmpty("Tarih"))
-               .MinimumLength(5).WithMessage(ValidationMessages.MinLength(5))
-               .MaximumLength(50).WithMessage(ValidationMessages.MaxLength(50));
-
             RuleFor(x => x.Description)
                .NotEmpty().WithMessage(ValidationMessages.NotEmpty("Açıklama"))
                .MinimumLength(5).WithMessage(ValidationMessages.MinLength(5));
 
             RuleFor(x => x.Technologies)
-                 .NotEmpty().WithMessage(ValidationMessages.NotEmpty("Resim"))
+                 .NotEmpty().WithMessage(ValidationMessages.NotEmpty("Teknoloji"))
                  .MinimumLength(5).WithMessage(ValidationMessages.MinLength(5));
         }
     }

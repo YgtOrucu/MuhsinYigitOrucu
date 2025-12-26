@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IRoleDal : IGenericDal<Role>
     {
+        List<GetMembersImageByRoleID> GetMembersImageByRole();
     }
 }

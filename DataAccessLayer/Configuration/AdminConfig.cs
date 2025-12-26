@@ -16,6 +16,10 @@ namespace DataAccessLayer.Configuration
             HasKey(x => x.AdminID);
             Property(x => x.AdminID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.NameSurname).HasColumnType("varchar").HasMaxLength(25);
+            Property(x => x.About).HasColumnType("varchar").HasMaxLength(150);
+            Property(x => x.Address).HasColumnType("varchar").HasMaxLength(200);
+            Property(x => x.Phone).HasColumnType("varchar").HasMaxLength(30);
+            Property(x => x.Image).HasColumnType("varchar").HasMaxLength(100);
             Property(x => x.MailAddress).HasColumnType("varchar").HasMaxLength(25);
             Property(x => x.Password).HasColumnType("varchar").HasMaxLength(80);    
         }

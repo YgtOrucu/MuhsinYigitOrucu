@@ -20,12 +20,16 @@ namespace MuhsinYigitÖrücü.Controllers
         private readonly IAdminService _adminService;
         private readonly IAboutService _aboutService;
         private readonly IEducationService _educationService;
+        private readonly IExperienceService _experienceService;
+        private readonly IRoleService _roleService;
 
         public AdminController()
         {
             _adminService = new AdminManager(new EFAdminDal(), new AdminValidation());
             _aboutService = new AboutManager(new EFAboutDal(), new AboutValidations());
             _educationService = new EducationManager(new EFEducationDal(), new EducationValidation());
+            _experienceService = new ExperienceManager(new EFExperienceDal(), new ExperienceValidation());
+            _roleService = new RoleManager(new EFRoleDal());
         }
         #endregion
 
@@ -90,6 +94,10 @@ namespace MuhsinYigitÖrücü.Controllers
             {
                 var updatedvalues = _adminService.TGetByID(a.AdminID);
                 updatedvalues.NameSurname = a.NameSurname;
+                updatedvalues.About = a.About;
+                updatedvalues.Address = a.Address;
+                updatedvalues.Phone = a.Phone;
+                updatedvalues.Image = a.Image;
                 updatedvalues.Password = a.Password;
                 updatedvalues.Status = a.Status;
                 updatedvalues.RoleID = a.RoleID;
@@ -100,7 +108,7 @@ namespace MuhsinYigitÖrücü.Controllers
             {
                 var errorMessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
                 TempData["Error"] = errorMessage;
-                TempData["RedirectUrl"] = Url.Action("Admin","Admin");
+                TempData["RedirectUrl"] = Url.Action("Admin", "Admin");
                 return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
             }
         }
@@ -131,7 +139,7 @@ namespace MuhsinYigitÖrücü.Controllers
             {
                 var errorMessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
                 TempData["Error"] = errorMessage;
-                TempData["RedirectUrl"] = Url.Action("About","Admin");
+                TempData["RedirectUrl"] = Url.Action("About", "Admin");
                 return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
             }
         }
@@ -199,7 +207,7 @@ namespace MuhsinYigitÖrücü.Controllers
                 TempData["RedirectUrl"] = Url.Action("Education", "Admin");
                 return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
 
-            }     
+            }
         }
         #endregion
 
@@ -232,9 +240,121 @@ namespace MuhsinYigitÖrücü.Controllers
                 TempData["RedirectUrl"] = Url.Action("Education", "Admin");
                 return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
             }
-          
+
         }
         #endregion
+
+        #endregion
+
+        #region ExperienceOperations
+
+        #region GetList
+        public ActionResult Experience()
+        {
+            var values = _experienceService.TGetAllList();
+            return View(values);
+        }
+        #endregion
+
+        #region Add
+        [HttpPost]
+        public ActionResult ExperienceAdd(Experience e)
+        {
+            try
+            {
+                _experienceService.TInsert(e);
+                return RedirectToAction("Experience");
+
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Experience", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+            }
+        }
+        #endregion
+
+        #region EditAndUpdate
+        public ActionResult ExperienceEdit(int id)
+        {
+            var values = _experienceService.TGetByID(id);
+            return View("ExperienceEdit", values);
+        }
+        [HttpPost]
+        public ActionResult ExperienceUpdate(Experience e)
+        {
+            try
+            {
+                var updatedvalue = _experienceService.TGetByID(e.ExperienceID);
+
+                updatedvalue.CompanyName = e.CompanyName;
+                updatedvalue.JobName = e.JobName;
+                updatedvalue.Place = e.Place;
+                updatedvalue.Description = e.Description;
+                updatedvalue.Technologies = e.Technologies;
+                updatedvalue.Date = e.Date;
+                updatedvalue.Status = e.Status;
+                _experienceService.TUpdate(updatedvalue);
+                return RedirectToAction("Experience");
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Experience", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region RoleOperations
+
+        #region GetList
+
+        public ActionResult Role()
+        {
+            #region GetRoleForDropdown
+            var RoleType = context.Roles.Select(x => new SelectListItem
+            {
+                Value = x.RoleID.ToString(),
+                Text = x.RoleType
+            }).ToList();
+            ViewBag.getroletype = RoleType;
+            #endregion
+
+            var values = _roleService.TGetMembersImageByRole();
+            return View(values);
+        }
+
+        #endregion
+
+        #region EditAndUpdate
+        [HttpGet]
+        public ActionResult RoleEdit(int id)
+        {
+            var values = _roleService.TGetByID(id);
+            return View("RoleEdit", values);
+        }
+        [HttpPost]
+        public ActionResult RoleUpdate(Role r)
+        {
+            var updatedrole = _roleService.TGetByID(r.RoleID);
+            updatedrole.RoleType = r.RoleType;
+            _roleService.TUpdate(updatedrole);
+            return RedirectToAction("Role");
+        }
+        #endregion
+
+        public ActionResult GetAdminByRoleType(int id)
+        {
+            var getmembers = _adminService.TGetAdminByRoleID(id);
+            return View(getmembers);
+        }
+
 
         #endregion
     }

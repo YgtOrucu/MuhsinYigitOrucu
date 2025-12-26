@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.Designer.cs">
       <DependentUpon>202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512261544113_AddedANewColumnToAdminTable.cs" />
+    <Compile Include="Migrations\202512261544113_AddedANewColumnToAdminTable.Designer.cs">
+      <DependentUpon>202512261544113_AddedANewColumnToAdminTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -122,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.resx">
       <DependentUpon>202512212006111_DeleteColumnDescriptionToEducationAndAddedNewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512261544113_AddedANewColumnToAdminTable.resx">
+      <DependentUpon>202512261544113_AddedANewColumnToAdminTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

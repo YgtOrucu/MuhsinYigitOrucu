@@ -20,6 +20,26 @@
         </div>
 
         <div class="mb-3">
+            <label for="About" class="form-label">About</label>
+            @Html.TextBoxFor(x => x.About, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="Address" class="form-label">Address</label>
+            @Html.TextAreaFor(x => x.Address, 4, 0, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="Phone" class="form-label">Phone</label>
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="Image" class="form-label">Image</label>
+            @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
             <label for="RoleID" class="form-label">Role Type</label>
             @Html.DropDownList("RoleID", (IEnumerable<SelectListItem>)ViewBag.RoleType, new { @class = "form-control" })
         </div>

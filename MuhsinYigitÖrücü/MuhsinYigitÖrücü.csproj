@@ -2278,6 +2278,11 @@
     <Content Include="Views\Admin\AboutEdit.cshtml" />
     <Content Include="Views\Admin\Education.cshtml" />
     <Content Include="Views\Admin\EducationEdit.cshtml" />
+    <Content Include="Views\Admin\Experience.cshtml" />
+    <Content Include="Views\Admin\ExperienceEdit.cshtml" />
+    <Content Include="Views\Admin\Role.cshtml" />
+    <Content Include="Views\Admin\GetAdminByRoleType.cshtml" />
+    <Content Include="Views\Admin\RoleEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

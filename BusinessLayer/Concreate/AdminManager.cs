@@ -29,6 +29,10 @@ namespace BusinessLayer.Concreate
         {
             return _adminDal.GetAllList();
         }
+        public List<Admin> TGetAdminByRoleID(int id)
+        {
+            return _adminDal.GetAdminByRoleID(id);
+        }
 
         public Admin TGetByID(int id)
         {
@@ -50,6 +54,10 @@ namespace BusinessLayer.Concreate
                 MailAddress = hashPasswordandMail[1].ToString(),
                 Password = hashPasswordandMail[0].ToString(),
                 NameSurname = entity.NameSurname,
+                About = entity.About,
+                Address = entity.Address,
+                Phone = entity.Phone,
+                Image = entity.Image,
                 RoleID =entity.RoleID,
                 Status=entity.Status
             };
@@ -114,8 +122,6 @@ namespace BusinessLayer.Concreate
 
             return visible + masked + "@" + domain;
         }
-
-
 
     }
 }

@@ -227,62 +227,73 @@
         color: #fff;
     }
 
-/* Skills – teal (tech) */
+/* Experience – indigo (experience & trust) */
 .nav-sidebar > .nav-item:nth-child(6) .nav-link:hover {
-    background: rgba(20, 184, 166, .18) !important;
+    background: rgba(79, 70, 229, .18) !important;
 }
 
     .nav-sidebar > .nav-item:nth-child(6) .nav-link:hover .nav-icon {
+        background: #4f46e5;
+        color: #fff;
+    }
+
+
+/* Skills – teal (tech) */
+.nav-sidebar > .nav-item:nth-child(7) .nav-link:hover {
+    background: rgba(20, 184, 166, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(7) .nav-link:hover .nav-icon {
         background: #14b8a6;
         color: #fff;
     }
 
 /* Jobs – amber (work) */
-.nav-sidebar > .nav-item:nth-child(7) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(8) .nav-link:hover {
     background: rgba(245, 158, 11, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(7) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(8) .nav-link:hover .nav-icon {
         background: #f59e0b;
         color: #fff;
     }
 
 /* Portfolio – violet (creative) */
-.nav-sidebar > .nav-item:nth-child(8) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(9) .nav-link:hover {
     background: rgba(124, 58, 237, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(8) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(9) .nav-link:hover .nav-icon {
         background: #7c3aed;
         color: #fff;
     }
 
 /* Portfolio Images – pink (visual) */
-.nav-sidebar > .nav-item:nth-child(9) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(10) .nav-link:hover {
     background: rgba(236, 72, 153, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(9) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(10) .nav-link:hover .nav-icon {
         background: #ec4899;
         color: #fff;
     }
 
 /* Go to Website – blue (external) */
-.nav-sidebar > .nav-item:nth-child(10) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(11) .nav-link:hover {
     background: rgba(59, 130, 246, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(10) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(11) .nav-link:hover .nav-icon {
         background: #3b82f6;
         color: #fff;
     }
 
 /* Logout – red (danger) */
-.nav-sidebar > .nav-item:nth-child(11) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(12) .nav-link:hover {
     background: rgba(239, 68, 68, .2) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(11) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(12) .nav-link:hover .nav-icon {
         background: #ef4444;
         color: #fff;
     }
@@ -340,6 +351,35 @@
         transition: background .15s ease;
     }
 
+/* Edit Button */
+.btn-viewMembers {
+    background: #f1f5f9;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .15s ease;
+    column-gap: 10px;
+    padding: 0 5px 0 5px;
+}
+
+    .btn-viewMembers i {
+        color: #2563eb;
+        font-size: 14px;
+    }
+
+    .btn-viewMembers:hover {
+        background: #e0f2fe;
+        border-color: #93c5fd;
+    }
+
+#forRoleType {
+    display: flex;
+    align-content: center;
+    column-gap: 20px;
+}
 /* Status badge */
 .status {
     padding: 4px 12px;
@@ -529,9 +569,9 @@
         transform: translateY(-1px);
     }
 
-.modal-footer{
-    display:flex;
-    column-gap:30px;
+.modal-footer {
+    display: flex;
+    column-gap: 30px;
 }
 /*Error CSS*/
 .error-card {
