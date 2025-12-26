@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concreate.SocialMedia
+@{
+    ViewBag.Title = "SocialMediaEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" action="~/Admin/SocialMediaUpdate">
+    <div class="modal-body">
+        <div class="mb-3">
+            @Html.HiddenFor(x => x.SocialMediaID, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            @Html.TextBoxFor(x => x.Href, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            @Html.TextBoxFor(x => x.IconAddress, new { @class = "form-control" })
+        </div>
+
+        <label for="AdminStatus" class="form-label">Status</label>
+        <div class="form-check-inline">
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, true, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumAktif">Active</label>
+            </div>
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, false, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumPasif">Pasive</label>
+            </div>
+        </div>
+
+        <br />
+    </div>
+    <div class="modal-footer">
+        <a href="@Url.Action("SocialMedia")" class="btn btn-danger btn-sm">Return</a>
+        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+    </div>
+</form>
+

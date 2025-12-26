@@ -1967,6 +1967,7 @@
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\move_up.png" />
     <Content Include="Content\images\next.png" />
+    <Content Include="Content\images\portfolyoTatilSeyahat.jpg" />
     <Content Include="Content\images\prev.png" />
     <Content Include="Content\images\serve.jpg" />
     <Content Include="Content\images\stats.jpg" />
@@ -2283,6 +2284,11 @@
     <Content Include="Views\Admin\Role.cshtml" />
     <Content Include="Views\Admin\GetAdminByRoleType.cshtml" />
     <Content Include="Views\Admin\RoleEdit.cshtml" />
+    <Content Include="Views\Admin\SocialMedia.cshtml" />
+    <Content Include="Views\Admin\SocialMediaEdit.cshtml" />
+    <Content Include="Views\Admin\Skills.cshtml" />
+    <Content Include="Views\Admin\SkillsEdit.cshtml" />
+    <Content Include="Views\Admin\Portfolyo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -248,52 +248,43 @@
         color: #fff;
     }
 
-/* Jobs – amber (work) */
-.nav-sidebar > .nav-item:nth-child(8) .nav-link:hover {
-    background: rgba(245, 158, 11, .18) !important;
-}
-
-    .nav-sidebar > .nav-item:nth-child(8) .nav-link:hover .nav-icon {
-        background: #f59e0b;
-        color: #fff;
-    }
 
 /* Portfolio – violet (creative) */
-.nav-sidebar > .nav-item:nth-child(9) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(8) .nav-link:hover {
     background: rgba(124, 58, 237, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(9) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(8) .nav-link:hover .nav-icon {
         background: #7c3aed;
         color: #fff;
     }
 
 /* Portfolio Images – pink (visual) */
-.nav-sidebar > .nav-item:nth-child(10) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(9) .nav-link:hover {
     background: rgba(236, 72, 153, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(10) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(9) .nav-link:hover .nav-icon {
         background: #ec4899;
         color: #fff;
     }
 
 /* Go to Website – blue (external) */
-.nav-sidebar > .nav-item:nth-child(11) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(10) .nav-link:hover {
     background: rgba(59, 130, 246, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(11) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(10) .nav-link:hover .nav-icon {
         background: #3b82f6;
         color: #fff;
     }
 
 /* Logout – red (danger) */
-.nav-sidebar > .nav-item:nth-child(12) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(11) .nav-link:hover {
     background: rgba(239, 68, 68, .2) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(12) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(11) .nav-link:hover .nav-icon {
         background: #ef4444;
         color: #fff;
     }

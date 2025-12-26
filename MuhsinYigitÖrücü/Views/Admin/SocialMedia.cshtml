@@ -1,0 +1,94 @@
+﻿@using EntityLayer.Concreate
+@model List<SocialMedia>
+@{
+    ViewBag.Title = "SocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-wrapper">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Href</th>
+                <th>IconAddress</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Href</td> 
+                    <td>@item.IconAddress</td>
+                    @if (item.Status)
+                    {
+                        <td>
+                            <span class="status active">Active</span>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <span class="status passive">Passive</span>
+                        </td>
+                    }
+                    <td>
+                        <a href="@Url.Action("SocialMediaEdit", "Admin", new {id = item.SocialMediaID})" class="btn-edit"><i class="fas fa-pen"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="table-header">
+    <button class="btn-add" data-toggle="modal" data-target="#modal1">
+        <i class="fas fa-plus"></i> Add
+    </button>
+</div>
+
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal1Label" style="margin:0 0 0 9rem">Add SocialMedia</h2>
+            </div>
+
+            <form method="post" action="~/Admin/SocialMediaAdd">
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Href" class="form-label">Href</label>
+                        <input type="text" name="Href" id="Href" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="IconAddress" class="form-label">IconAddress</label>
+                        <input type="text" name="IconAddress" id="IconAddress" class="form-control">
+                    </div>
+                 
+                    <label for="AdminStatus" class="form-label">Status</label>
+                    <div class="form-check-inline">
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumAktif" name="Status" type="radio" value="True">
+                            <label class="form-check-label" for="durumAktif">Active</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumPasif" name="Status" type="radio" value="False">
+                            <label class="form-check-label" for="durumPasif">Pasive</label>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

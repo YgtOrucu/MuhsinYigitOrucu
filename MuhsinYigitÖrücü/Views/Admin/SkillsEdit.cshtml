@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concreate.Skills
+@{
+    ViewBag.Title = "SkillsEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post" action="~/Admin/SkillsUpdate">
+    <div class="modal-body">
+        <div class="mb-3">
+            @Html.HiddenFor(x => x.SkillsID, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            @Html.TextAreaFor(x => x.SkillsName, 2, 0, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="SkillsPercentage" class="form-label">SkillsPercentage</label>
+            @Html.TextBoxFor(x => x.SkillsPercentage, new { @class = "form-control", @type = "number" })
+        </div>
+
+        <label for="AdminStatus" class="form-label">Status</label>
+        <div class="form-check-inline">
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, true, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumAktif">Active</label>
+            </div>
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, false, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumPasif">Pasive</label>
+            </div>
+        </div>
+
+        <br />
+    </div>
+    <div class="modal-footer">
+        <a href="@Url.Action("Skills")" class="btn btn-danger btn-sm">Return</a>
+        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+    </div>
+</form>
+
+

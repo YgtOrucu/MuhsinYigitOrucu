@@ -22,6 +22,9 @@ namespace MuhsinYigitÖrücü.Controllers
         private readonly IEducationService _educationService;
         private readonly IExperienceService _experienceService;
         private readonly IRoleService _roleService;
+        private readonly ISocialMediaService _socialMediaService;
+        private readonly ISkillsService _skillsService;
+        private readonly IPortfolyoService _portfolyoService;
 
         public AdminController()
         {
@@ -30,6 +33,9 @@ namespace MuhsinYigitÖrücü.Controllers
             _educationService = new EducationManager(new EFEducationDal(), new EducationValidation());
             _experienceService = new ExperienceManager(new EFExperienceDal(), new ExperienceValidation());
             _roleService = new RoleManager(new EFRoleDal());
+            _socialMediaService = new SocialMediaManager(new EFSocialMediaDal());
+            _skillsService = new SkillsManager(new EFSkillsDal(), new SkillsValidation());
+            _portfolyoService = new PortfolyoManager(new EFPortfolyoDal(), new PortfolyoValidation());
         }
         #endregion
 
@@ -355,6 +361,145 @@ namespace MuhsinYigitÖrücü.Controllers
             return View(getmembers);
         }
 
+
+        #endregion
+
+        #region SocialMediaOperations
+
+        #region List
+        public ActionResult SocialMedia()
+        {
+            var values = _socialMediaService.TGetAllList();
+            return View(values);
+        }
+        #endregion
+
+        #region Add
+        public ActionResult SocialMediaAdd(SocialMedia s)
+        {
+            _socialMediaService.TInsert(s);
+            return RedirectToAction("SocialMedia");
+        }
+        #endregion
+
+        #region EditAndUpdate
+        public ActionResult SocialMediaEdit(int id)
+        {
+            var values = _socialMediaService.TGetByID(id);
+            return View("SocialMediaEdit", values);
+        }
+        [HttpPost]
+        public ActionResult SocialMediaUpdate(SocialMedia s)
+        {
+            var updatedmedia = _socialMediaService.TGetByID(s.SocialMediaID);
+
+            updatedmedia.IconAddress = s.IconAddress;
+            updatedmedia.Href = s.Href;
+            updatedmedia.Status = s.Status;
+            _socialMediaService.TUpdate(updatedmedia);
+            return RedirectToAction("SocialMedia");
+        }
+
+        #endregion
+
+        #endregion
+
+        #region SkillsOperation
+
+        #region List
+        public ActionResult Skills()
+        {
+            var values = _skillsService.TGetAllList();
+            return View(values);
+
+        }
+        #endregion
+
+        #region Add
+
+        public ActionResult SkillsAdd(Skills s)
+        {
+            try
+            {
+                _skillsService.TInsert(s);
+                return RedirectToAction("Skills");
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Skills", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+
+            }
+        }
+
+
+
+        #endregion
+
+        #region EditAndUpdate
+
+        public ActionResult SkillsEdit(int id)
+        {
+            var values = _skillsService.TGetByID(id);
+            return View("SkillsEdit", values);
+        }
+        [HttpPost]
+        public ActionResult SkillsUpdate(Skills s)
+        {
+
+            try
+            {
+                var updatedSkills = _skillsService.TGetByID(s.SkillsID);
+                updatedSkills.SkillsName = s.SkillsName;
+                updatedSkills.SkillsPercentage = s.SkillsPercentage;
+                updatedSkills.Status = s.Status;
+                _skillsService.TUpdate(updatedSkills);
+                return RedirectToAction("Skills");
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Skills", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region PortfolyoOperation
+
+        #region List
+
+        public ActionResult Portfolyo()
+        {
+            var values = _portfolyoService.TGetAllList();
+            return View(values);
+        }
+        #endregion
+
+        #region Add
+
+        public ActionResult PortfolyoAdd(Portfolyo p)
+        {
+            try
+            {
+                _portfolyoService.TInsert(p);
+                return RedirectToAction("Portfolyo");
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Portfolyo", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+            }
+        }
+
+        #endregion
 
         #endregion
     }

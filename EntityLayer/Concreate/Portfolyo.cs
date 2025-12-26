@@ -13,6 +13,7 @@ namespace EntityLayer.Concreate
         public int PortfolyoID { get; set; }
         public string HeadingName { get; set; }
         public string Image { get; set; }
+        public bool Status { get; set; }
         public virtual ICollection<PortfolyoImages> PortfolyoImages { get; set; }
     }
 }

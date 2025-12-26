@@ -1,0 +1,117 @@
+﻿@using EntityLayer.Concreate
+@model List<Skills>
+@{
+    ViewBag.Title = "Skills";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-wrapper">
+    <table class="modern-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>ProgressBar</th>
+                <th>Percentage</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                int percentage = 0;
+                int.TryParse(item.SkillsPercentage, out percentage);
+                string progressClass = "";
+                if (percentage >= 0 && percentage < 30)
+                {
+                    progressClass = "bg-danger";
+                }
+                else if (percentage >= 30 && percentage < 50)
+                {
+                    progressClass = "bg-warning";
+                }
+                else if (percentage >= 50 && percentage < 70)
+                {
+                    progressClass = "bg-orange";
+                }
+                else if (percentage >= 70 && percentage <= 100)
+                {
+                    progressClass = "bg-success";
+                }
+                <tr>
+                    <td>@item.SkillsName</td>
+                    <td>
+                        <div class="progress progress-xs" style="margin-top:10px">
+                            <div class="progress-bar @progressClass" style=width:@item.SkillsPercentage%></div>
+                        </div>
+                    </td>
+                    <td><span class="badge @progressClass">@item.SkillsPercentage%</span></td>
+                    @if (item.Status)
+                    {
+                        <td>
+                            <span class="status active">Active</span>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <span class="status passive">Passive</span>
+                        </td>
+                    }
+                    <td>
+                        <a href="@Url.Action("SkillsEdit", "Admin" , new {id=item.SkillsID})" class="btn-edit"><i class="fas fa-pen"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="table-header">
+    <button class="btn-add" data-toggle="modal" data-target="#modal1">
+        <i class="fas fa-plus"></i> Add
+    </button>
+</div>
+
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal1Label" style="margin:0 0 0 9rem">Add Skills</h2>
+            </div>
+
+            <form method="post" action="~/Admin/SkillsAdd">
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label for="Href" class="form-label">SkillsName</label>
+                        @Html.TextArea("SkillsName", null, 2, 0, new { @class = "form-control" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="IconAddress" class="form-label">SkillsPercentage</label>
+                        <input type="number" name="SkillsPercentage" id="SkillsPercentage" class="form-control">
+                    </div>
+
+                    <label for="AdminStatus" class="form-label">Status</label>
+                    <div class="form-check-inline">
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumAktif" name="Status" type="radio" value="True">
+                            <label class="form-check-label" for="durumAktif">Active</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="durumPasif" name="Status" type="radio" value="False">
+                            <label class="form-check-label" for="durumPasif">Pasive</label>
+                        </div>
+                    </div>
+
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
