@@ -1,0 +1,11 @@
+﻿@model EntityLayer.Concreate.Portfolyo
+@{
+    ViewBag.Title = "PortfolyoImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="fullscreen-wrapper">
+    <a href="/Admin/Portfolyo" class="close-btn">&times;</a>
+
+    <img src="@Model.Image" alt="Portfolyo Image" class="centered-image" />
+</div>

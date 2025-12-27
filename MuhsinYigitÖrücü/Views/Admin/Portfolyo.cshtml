@@ -23,8 +23,8 @@
                     <td>
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="@Url.Action("PortfolyoEdit", "Admin", new {id = item.PortfolyoID})">
-                                    <img src="@(item.Image)" class="table-avatar" style="width:40px; cursor:pointer" data-toggle="modal" data-target="#modal2">
+                                <a href="@Url.Action("PortfolyoImage", "Admin", new {id = item.PortfolyoID})">
+                                    <img src="@(item.Image)" class="table-avatar" style="width:40px; cursor:pointer">
                                 </a>
                             </li>
                         </ul>
@@ -99,17 +99,6 @@
 </div>
 
 
-<div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-fullscreen-custom">
-        <div class="modal-content bg-dark">
-            <div class="modal-body p-0 d-flex justify-content-center align-items-center">
-                <img id="modalImage"
-                     src="~/Content/images/portfolyoTatilSeyahat.jpg"
-                     style="width: 230%;">
-            </div>
-        </div>
-    </div>
-</div>
 
 
 

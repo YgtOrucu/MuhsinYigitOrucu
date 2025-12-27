@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityLayer.Concreate
+namespace EntityLayer.Models
 {
-    public class GetMembersImageByRoleID
+    public class GetImagesByPortfolyoID
     {
-        public int RoleID { get; set; }
-        public string RoleType { get; set; }
+        public int PortfolyoID { get; set; }
+        public string HeadingName { get; set; }
         public List<string> Images { get; set; }
     }
-
 }

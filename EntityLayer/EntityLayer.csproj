@@ -55,7 +55,8 @@
     <Compile Include="Concreate\Admin.cs" />
     <Compile Include="Concreate\Education.cs" />
     <Compile Include="Concreate\Experience.cs" />
-    <Compile Include="Concreate\GetMembersImageByRoleID.cs" />
+    <Compile Include="Models\GetImagesByPortfolyoID.cs" />
+    <Compile Include="Models\GetMembersImageByRoleID.cs" />
     <Compile Include="Concreate\Portfolyo.cs" />
     <Compile Include="Concreate\PortfolyoImages.cs" />
     <Compile Include="Concreate\Role.cs" />

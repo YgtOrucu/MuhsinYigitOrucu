@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concreate.Portfolyo
+@{
+    ViewBag.Title = "PortfolyoEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" action="~/Admin/PortfolyoUpdate">
+    <div class="modal-body">
+        <div class="mb-3">
+            @Html.HiddenFor(x => x.PortfolyoID, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="RoleType" class="form-label">Heading Name</label>
+            @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            <label for="RoleType" class="form-label">Image Url</label>
+            @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        </div>
+        <label for="AdminStatus" class="form-label">Status</label>
+        <div class="form-check-inline">
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, true, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumAktif">Active</label>
+            </div>
+            <div class="form-check">
+                @Html.RadioButtonFor(x => x.Status, false, new { @class = "form-check-input" })
+                <label class="form-check-label" for="durumPasif">Pasive</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="@Url.Action("Portfolyo")" class="btn btn-danger btn-sm">Return</a>
+        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+    </div>
+</form>

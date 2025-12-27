@@ -1954,6 +1954,9 @@
     <Content Include="Content\images\close.png" />
     <Content Include="Content\images\contact.jpg" />
     <Content Include="Content\images\Cv.jpeg" />
+    <Content Include="Content\images\DinamikCV\portfolyodinamikcv1.jpg" />
+    <Content Include="Content\images\DinamikCV\portfolyodinamikcv2.jpg" />
+    <Content Include="Content\images\DinamikCV\portfolyodinamikcv3.jpg" />
     <Content Include="Content\images\exp.jpg" />
     <Content Include="Content\images\g1.jpg" />
     <Content Include="Content\images\g2.jpg" />
@@ -1967,10 +1970,17 @@
     <Content Include="Content\images\loader.gif" />
     <Content Include="Content\images\move_up.png" />
     <Content Include="Content\images\next.png" />
-    <Content Include="Content\images\portfolyoTatilSeyahat.jpg" />
+    <Content Include="Content\images\DinamikCV\portfolyodinamikcv.jpg" />
+    <Content Include="Content\images\TatilSeyahat\portfolyoTatilSeyahat.jpg" />
     <Content Include="Content\images\prev.png" />
     <Content Include="Content\images\serve.jpg" />
     <Content Include="Content\images\stats.jpg" />
+    <Content Include="Content\images\TatilSeyahat\portfolyoTatilSeyahat1.jpg" />
+    <Content Include="Content\images\TatilSeyahat\portfolyoTatilSeyahat2.jpg" />
+    <Content Include="Content\images\TatilSeyahat\portfolyoTatilSeyahat3.jpg" />
+    <Content Include="Content\images\TatilSeyahat\portfolyoTatilSeyahat4.jpg" />
+    <Content Include="Content\images\TatilSeyahat\portfolyoTatilSeyahat5.jpg" />
+    <Content Include="Content\images\TatilSeyahat\portfolyoTatilSeyahat6.jpg" />
     <Content Include="Content\images\testimonials.jpg" />
     <Content Include="Content\js\aos.js" />
     <Content Include="Content\js\bootstrap.js" />
@@ -2289,6 +2299,9 @@
     <Content Include="Views\Admin\Skills.cshtml" />
     <Content Include="Views\Admin\SkillsEdit.cshtml" />
     <Content Include="Views\Admin\Portfolyo.cshtml" />
+    <Content Include="Views\Admin\PortfolyoImage.cshtml" />
+    <Content Include="Views\Admin\PortfolyoEdit.cshtml" />
+    <Content Include="Views\Admin\PortfolyoImages.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

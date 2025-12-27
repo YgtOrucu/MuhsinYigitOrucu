@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concreate;
+using EntityLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace BusinessLayer.Concreate
         public PortfolyoImages TGetByID(int id)
         {
             return _portfolyoImagesDal.GetByID(id);
+        }
+
+        public List<GetImagesByPortfolyoID> TGetImagesByPortfolyoID()
+        {
+            return _portfolyoImagesDal.GetImagesByPortfolyoID();
         }
 
         public List<PortfolyoImages> TGetListByFilter(Expression<Func<PortfolyoImages, bool>> filter)

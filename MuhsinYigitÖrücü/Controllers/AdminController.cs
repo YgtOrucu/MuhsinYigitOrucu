@@ -25,6 +25,7 @@ namespace MuhsinYigitÖrücü.Controllers
         private readonly ISocialMediaService _socialMediaService;
         private readonly ISkillsService _skillsService;
         private readonly IPortfolyoService _portfolyoService;
+        private readonly IPortfolyoImagesService _portfolyoImagesService;
 
         public AdminController()
         {
@@ -36,6 +37,7 @@ namespace MuhsinYigitÖrücü.Controllers
             _socialMediaService = new SocialMediaManager(new EFSocialMediaDal());
             _skillsService = new SkillsManager(new EFSkillsDal(), new SkillsValidation());
             _portfolyoService = new PortfolyoManager(new EFPortfolyoDal(), new PortfolyoValidation());
+            _portfolyoImagesService = new PortfolyoImagesManager(new EFPortfolyoImagesDal());
         }
         #endregion
 
@@ -481,6 +483,14 @@ namespace MuhsinYigitÖrücü.Controllers
         }
         #endregion
 
+        #region GetImage
+        public ActionResult PortfolyoImage(int id)
+        {
+            var values = _portfolyoService.TGetByID(id);
+            return View("PortfolyoImage", values);
+        }
+        #endregion
+
         #region Add
 
         public ActionResult PortfolyoAdd(Portfolyo p)
@@ -497,6 +507,71 @@ namespace MuhsinYigitÖrücü.Controllers
                 TempData["RedirectUrl"] = Url.Action("Portfolyo", "Admin");
                 return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
             }
+        }
+
+
+        #endregion
+
+        #region EditAdnUpdate
+        public ActionResult PortfolyoEdit(int id)
+        {
+            var values = _portfolyoService.TGetByID(id);
+            return View("PortfolyoEdit", values);
+        }
+
+        [HttpPost]
+        public ActionResult PortfolyoUpdate(Portfolyo p)
+        {
+            try
+            {
+                var updatedPortfolyo = _portfolyoService.TGetByID(p.PortfolyoID);
+
+                updatedPortfolyo.HeadingName = p.HeadingName;
+                updatedPortfolyo.Image = p.Image;
+                updatedPortfolyo.Status = p.Status;
+                _portfolyoService.TUpdate(updatedPortfolyo);
+                return RedirectToAction("Portfolyo");
+            }
+            catch (ValidationException ex)
+            {
+                var errormessage = string.Join("<br>", ex.Errors.Select(x => x.ErrorMessage));
+                TempData["Error"] = errormessage;
+                TempData["RedirectUrl"] = Url.Action("Portfolyo", "Admin");
+                return RedirectToAction("ErrorPageForAdminPages", "ErrorPages");
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region PortfolyoImageOperation
+
+        #region List
+        public ActionResult PortfolyoImages()
+        {
+            #region GetPortfolyoHeading
+            var getvalues = context.Portfolyos.Select(x => new SelectListItem
+            {
+                Value = x.PortfolyoID.ToString(),
+                Text = x.HeadingName
+            }).ToList();
+            ViewBag.PortfolyoHeading = getvalues;
+           
+            #endregion
+
+            var values = _portfolyoImagesService.TGetImagesByPortfolyoID();
+            return View(values);
+        }
+
+        #endregion
+
+        #region Add
+
+        [HttpPost]
+        public ActionResult PortfolyoImagesAdd(PortfolyoImages p)
+        {
+            _portfolyoImagesService.TInsert(p);
+            return RedirectToAction("PortfolyoImages");
         }
 
         #endregion
