@@ -1,0 +1,39 @@
+﻿@using EntityLayer.Concreate
+@model List<PortfolyoImages>
+@{
+    ViewBag.Title = "ViewsImages";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <!-- Default box -->
+    <div class="card card-solid">
+        <div class="card-body pb-0">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-12" style="height: 550px;">
+                        <div class="card bg-light" style="height: 500px;">
+                            <div class="card-body pt-0">
+                                <img src="@(item.Images)" alt="" class="img-fluid" style="height: 400px;margin-top:1rem">
+                            </div>
+                            <div>
+                                <a href="@Url.Action("PortfolyoImagesDelete", "Admin", new {id= item.PortfolyoImagesID})" class="btn btn-danger" style="float: right;margin-right: 1rem;">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+        <div style="margin-right: 2rem;">
+            <a href="@Url.Action("PortfolyoImages")" class="btn btn-danger btn-sm" style="float:right"><i class="fa fa-arrow-left"></i> Return</a>
+        </div>
+    </div>
+    <!-- /.card -->
+</body>
+</html>
+
+

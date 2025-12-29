@@ -11,5 +11,8 @@ namespace BusinessLayer.Abstract
     public interface IPortfolyoImagesService : IGenericService<PortfolyoImages>
     {
         List<GetImagesByPortfolyoID> TGetImagesByPortfolyoID();
+
+        List<PortfolyoImages> TGetAllListImagesByPortfolyoID(int id);
+
     }
 }

@@ -13,6 +13,12 @@ namespace DataAccessLayer.EFramework
     public class EFAdminDal : GenericRepository<Admin>, IAdminDal
     {
         MYOContext context = new MYOContext();
+
+        public List<Admin> CheckAdminForLogin(string mail, string password)
+        {
+            return context.Admins.Where(x => x.MailAddress == mail && x.Password == password).ToList();
+        }
+
         public List<Admin> GetAdminByRoleID(int id)
         {
             return context.Admins.Where(x => x.RoleID == id).ToList();

@@ -11,5 +11,7 @@ namespace DataAccessLayer.Abstract
     public interface IPortfolyoImagesDal : IGenericDal<PortfolyoImages>
     {
         List<GetImagesByPortfolyoID> GetImagesByPortfolyoID();
+
+        List<PortfolyoImages> GetAllListImagesByPortfolyoID(int id);
     }
 }

@@ -46,6 +46,12 @@ namespace MuhsinYigitÖrücü.Controllers
         #region GetList
         public ActionResult Admin()
         {
+            if (!User.IsInRole("1"))
+            {
+                TempData["Error"] = "Bu sayfayı görüntüleme yetkisine sahip değilsiniz";
+                return RedirectToAction("ErrorPageForRolePermission", "ErrorPages");
+            }
+
             #region GetRoleTypeForDropdownList
             var getRoleType = context.Roles.Select(x => new SelectListItem
             {
@@ -344,6 +350,11 @@ namespace MuhsinYigitÖrücü.Controllers
         [HttpGet]
         public ActionResult RoleEdit(int id)
         {
+            if (!User.IsInRole("1"))
+            {
+                TempData["Error"] = "Bu sayfayı görüntüleme yetkisine sahip değilsiniz";
+                return RedirectToAction("ErrorPageForRolePermission", "ErrorPages");
+            }
             var values = _roleService.TGetByID(id);
             return View("RoleEdit", values);
         }
@@ -359,6 +370,20 @@ namespace MuhsinYigitÖrücü.Controllers
 
         public ActionResult GetAdminByRoleType(int id)
         {
+            if (!User.IsInRole("1"))
+            {
+                if (id == 2) 
+                {
+                    var getmemberss = _adminService.TGetAdminByRoleID(id);
+                    return View(getmemberss);
+                }
+                else
+                {
+                    TempData["Error"] = "Bu sayfayı görüntüleme yetkisine sahip değilsiniz";
+                    return RedirectToAction("ErrorPageForRolePermission", "ErrorPages");
+                }
+            }
+
             var getmembers = _adminService.TGetAdminByRoleID(id);
             return View(getmembers);
         }
@@ -576,6 +601,25 @@ namespace MuhsinYigitÖrücü.Controllers
 
         #endregion
 
+        #region Delete
+
+        public ActionResult PortfolyoImagesDelete(int id)
+        {
+            var values = _portfolyoImagesService.TGetByID(id);
+            values.Status = false;
+            _portfolyoImagesService.TUpdate(values);
+            return RedirectToAction("PortfolyoImages");
+        }
+
         #endregion
+
+        public ActionResult ViewsImages(int id)
+        {
+            var values = _portfolyoImagesService.TGetAllListImagesByPortfolyoID(id);
+            return View(values);
+        }
+
+        #endregion
+
     }
 }

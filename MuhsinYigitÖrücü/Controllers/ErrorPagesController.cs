@@ -13,5 +13,10 @@ namespace MuhsinYigitÖrücü.Controllers
         {
             return View();
         }
+
+        public ActionResult ErrorPageForRolePermission()
+        {
+            return View();
+        }
     }
 }

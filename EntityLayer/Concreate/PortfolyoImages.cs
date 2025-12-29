@@ -14,5 +14,6 @@ namespace EntityLayer.Concreate
         public string Images { get; set; }
         public int PortfolyoID { get; set; }
         public Portfolyo Portfolyo { get; set; }
+        public bool Status { get; set; }
     }
 }

@@ -10,5 +10,7 @@ namespace DataAccessLayer.Abstract
     public interface IAdminDal : IGenericDal<Admin>
     {
         List<Admin> GetAdminByRoleID(int id);
+
+        List<Admin> CheckAdminForLogin(string mail, string password);
     }
 }

@@ -23,6 +23,11 @@ namespace BusinessLayer.Concreate
             return _portfolyoImagesDal.GetAllList();
         }
 
+        public List<PortfolyoImages> TGetAllListImagesByPortfolyoID(int id)
+        {
+            return _portfolyoImagesDal.GetAllListImagesByPortfolyoID(id);
+        }
+
         public PortfolyoImages TGetByID(int id)
         {
             return _portfolyoImagesDal.GetByID(id);

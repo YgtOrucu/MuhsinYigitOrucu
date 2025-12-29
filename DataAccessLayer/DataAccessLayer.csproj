@@ -105,6 +105,10 @@
     <Compile Include="Migrations\202512261945322_AddedANewStatusColumnToPortfolyoTable.Designer.cs">
       <DependentUpon>202512261945322_AddedANewStatusColumnToPortfolyoTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512291542498_AddedStatusColumnToPortfolyoImageTable.cs" />
+    <Compile Include="Migrations\202512291542498_AddedStatusColumnToPortfolyoImageTable.Designer.cs">
+      <DependentUpon>202512291542498_AddedStatusColumnToPortfolyoImageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -136,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512261945322_AddedANewStatusColumnToPortfolyoTable.resx">
       <DependentUpon>202512261945322_AddedANewStatusColumnToPortfolyoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512291542498_AddedStatusColumnToPortfolyoImageTable.resx">
+      <DependentUpon>202512291542498_AddedStatusColumnToPortfolyoImageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

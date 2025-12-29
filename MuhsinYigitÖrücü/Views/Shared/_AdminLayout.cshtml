@@ -34,28 +34,7 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown user-dropdown">
-                    <a class="nav-link d-flex align-items-center" href="#" data-toggle="dropdown">
-                        <img src="https://i.pravatar.cc/40"
-                             class="user-image"
-                             alt="User Image">
-                        <span class="user-name">Yiğit</span>
-                        <i class="fas fa-chevron-down ml-2"></i>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-user mr-2"></i> Hesabım
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item logout">
-                            <i class="fas fa-sign-out-alt mr-2"></i> Çıkış Yap
-                        </a>
-                    </div>
-                </li>
-            </ul>
+           
         </nav>
 
         <!-- /.navbar -->
@@ -66,11 +45,11 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Content/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="@Session["Image"]" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
-                        <span class="user-role">Admin Yardımcısı</span>
+                        <a href="#" class="d-block">@Session["NameSurname"]</a>
+                        <span class="user-role">@Session["RoleName"]</span>
                     </div>
                 </div>
                 <nav class="mt-2">
@@ -147,7 +126,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/Login/Logout" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>Logout</p>
                             </a>

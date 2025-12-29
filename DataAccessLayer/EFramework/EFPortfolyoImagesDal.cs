@@ -14,6 +14,12 @@ namespace DataAccessLayer.EFramework
     public class EFPortfolyoImagesDal : GenericRepository<PortfolyoImages>, IPortfolyoImagesDal
     {
         MYOContext context = new MYOContext();
+
+        public List<PortfolyoImages> GetAllListImagesByPortfolyoID(int id)
+        {
+            return context.PortfolyoImages.Where(x => x.PortfolyoID == id && x.Status == true).ToList();
+        }
+
         public List<GetImagesByPortfolyoID> GetImagesByPortfolyoID()
         {
             var values = context.PortfolyoImages

@@ -34,16 +34,16 @@
                                 @for (int i = 0; i < item.Images.Count; i++)
                                 {
                                     <li class="list-inline-item">
-                                        <img src="@(item.Images[i])" class="table-avatar" style="width:50px; cursor:pointer">
+                                        <img src="@(item.Images[i])" class="table-avatar" style="width:50px;">
                                     </li>
                                 }
                             </ul>
                         </td>
                         <td class="project-actions text-right">
-                            <a class="btn btn-info btn-sm" href="@Url.Action("PortfolyoImagesEdit", "Admin", new {id = item.PortfolyoID})">
-                                <i class="fas fa-pencil-alt">
+                            <a class="btn btn-info btn-sm" href="@Url.Action("ViewsImages", "Admin", new {id = item.PortfolyoID})">
+                                <i class="fas fa-folder">
                                 </i>
-                                Edit
+                                ViewImages
                             </a>
                         </td>
                     </tr>

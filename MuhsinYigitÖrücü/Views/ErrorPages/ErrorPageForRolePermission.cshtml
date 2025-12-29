@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ErrorPageForRolePermission";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var error = TempData["Error"] as string;
+}
+
+<style>
+    /*ErrorPageForRolePermission*/
+
+    .error-container {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .error-code {
+        font-size: 120px;
+        font-weight: 900;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 5px;
+    }
+
+    .error-title {
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    .error-description {
+        font-size: 16px;
+        max-width: 520px;
+        color: #6c757d;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .error-footnote {
+        font-size: 13px;
+        color: #999;
+        opacity: 0.8;
+    }
+
+
+    /*ErrorPageForRolePermission*/
+</style>
+
+
+
+<div class="error-container">
+    <div class="error-code">404</div>
+
+    <h1 class="error-title">Not Fount Page</h1>
+
+    <p class="error-description">
+        @error
+    </p>
+</div>
+
