@@ -13,6 +13,6 @@ namespace BusinessLayer.Abstract
         List<GetImagesByPortfolyoID> TGetImagesByPortfolyoID();
 
         List<PortfolyoImages> TGetAllListImagesByPortfolyoID(int id);
-
+        List<PortfolyoImages> TGetActiveForUsersPage();
     }
 }

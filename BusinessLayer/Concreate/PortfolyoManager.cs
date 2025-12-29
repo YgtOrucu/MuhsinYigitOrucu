@@ -22,6 +22,11 @@ namespace BusinessLayer.Concreate
             _validationRulesPortfolyo = validationRulesPortfolyo;
         }
 
+        public List<Portfolyo> tGetActiveForUsersPage()
+        {
+            return _portfolyoDal.GetActiveForUsersPage();
+        }
+
         public List<Portfolyo> TGetAllList()
         {
             return _portfolyoDal.GetAllList();

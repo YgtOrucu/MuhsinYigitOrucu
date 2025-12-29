@@ -17,6 +17,12 @@ namespace BusinessLayer.Concreate
         {
             _socialMediaDal = socialMediaDal;
         }
+
+        public List<SocialMedia> TGetActiveForUsersPage()
+        {
+            return _socialMediaDal.GetActiveForUsersPage();
+        }
+
         public List<SocialMedia> TGetAllList()
         {
             return _socialMediaDal.GetAllList();

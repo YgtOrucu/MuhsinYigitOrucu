@@ -23,6 +23,10 @@ namespace BusinessLayer.Concreate
             _validationRulesEducation = validationRulesEducation;
         }
 
+        public List<Education> tGetActiveForUsersPage()
+        {
+            return _educationDal.GetActiveForUsersPage();
+        }
 
         public List<Education> TGetAllList()
         {

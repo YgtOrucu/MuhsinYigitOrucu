@@ -18,6 +18,12 @@ namespace BusinessLayer.Concreate
         {
             _portfolyoImagesDal = portfolyoImagesDal;
         }
+
+        public List<PortfolyoImages> TGetActiveForUsersPage()
+        {
+            return _portfolyoImagesDal.GetActiveForUsersPage();
+        }
+
         public List<PortfolyoImages> TGetAllList()
         {
             return _portfolyoImagesDal.GetAllList();

@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface IEducationDal : IGenericDal<Education>
     {
+        List<Education> GetActiveForUsersPage();
     }
 }

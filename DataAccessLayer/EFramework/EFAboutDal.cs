@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Context;
 using DataAccessLayer.GenericRepo;
 using EntityLayer.Concreate;
 using System;
@@ -11,5 +12,10 @@ namespace DataAccessLayer.EFramework
 {
     public class EFAboutDal : GenericRepository<About>, IAboutDal
     {
+        MYOContext c = new MYOContext();
+        public List<About> GetActiveForUsersPage()
+        {
+            return c.Abouts.Where(x => x.Status == true).ToList();
+        }
     }
 }

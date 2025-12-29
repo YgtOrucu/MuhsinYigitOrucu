@@ -22,6 +22,11 @@ namespace BusinessLayer.Concreate
             _validationRulesExperience = validationRulesExperience;
         }
 
+        public List<Experience> TGetActiveForUsersPage()
+        {
+            return _experienceDal.GetActiveForUsersPage();
+        }
+
         public List<Experience> TGetAllList()
         {
             return _experienceDal.GetAllList();

@@ -2032,6 +2032,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorPagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2409,6 +2410,7 @@
     <Content Include="Views\Admin\ViewsImages.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\ErrorPages\ErrorPageForRolePermission.cshtml" />
+    <Content Include="Views\Users\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Context;
 using DataAccessLayer.GenericRepo;
 using EntityLayer.Concreate;
 using System;
@@ -11,5 +12,11 @@ namespace DataAccessLayer.EFramework
 {
     public class EFEducationDal : GenericRepository<Education>, IEducationDal
     {
+        MYOContext c = new MYOContext();
+
+        public List<Education> GetActiveForUsersPage()
+        {
+            return c.Educations.Where(x => x.Status == true).ToList();
+        }
     }
 }

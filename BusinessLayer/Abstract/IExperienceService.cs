@@ -10,5 +10,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IExperienceService : IGenericService<Experience>
     {
+        List<Experience> TGetActiveForUsersPage();
     }
 }

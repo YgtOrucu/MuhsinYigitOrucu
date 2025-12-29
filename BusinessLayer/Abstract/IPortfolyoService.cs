@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IPortfolyoService : IGenericService<Portfolyo>
     {
+        List<Portfolyo> tGetActiveForUsersPage();
     }
 }

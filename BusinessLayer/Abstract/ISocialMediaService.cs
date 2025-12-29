@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface ISocialMediaService : IGenericService<SocialMedia>
     {
+        List<SocialMedia> TGetActiveForUsersPage();
     }
 }

@@ -22,6 +22,11 @@ namespace BusinessLayer.Concreate
             _validationRulesSkills = validationRulesSkills;
         }
 
+        public List<Skills> TGetActiveForUsersPage()
+        {
+            return _skillsDal.GetActiveForUsersPage();
+        }
+
         public List<Skills> TGetAllList()
         {
             return _skillsDal.GetAllList();

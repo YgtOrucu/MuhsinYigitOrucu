@@ -15,6 +15,11 @@ namespace DataAccessLayer.EFramework
     {
         MYOContext context = new MYOContext();
 
+        public List<PortfolyoImages> GetActiveForUsersPage()
+        {
+            return context.PortfolyoImages.Where(x => x.Status == true).ToList();
+        }
+
         public List<PortfolyoImages> GetAllListImagesByPortfolyoID(int id)
         {
             return context.PortfolyoImages.Where(x => x.PortfolyoID == id && x.Status == true).ToList();

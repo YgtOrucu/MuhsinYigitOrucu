@@ -23,7 +23,11 @@ namespace BusinessLayer.Concreate
             _aboutDal = aboutDal;
             _validationRulesAbout = validationRulesAbout;
         }
-        #endregion 
+        public List<About> TGetActiveForUsersPage()
+        {
+            return _aboutDal.GetActiveForUsersPage();
+        }
+        #endregion
         public List<About> TGetAllList()
         {
             return _aboutDal.GetAllList();
