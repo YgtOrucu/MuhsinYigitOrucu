@@ -45,5 +45,49 @@ namespace MuhsinYigitÖrücü.Controllers
             var values = _aboutService.TGetActiveForUsersPage();
             return View(values);
         }
+
+        public ActionResult Experience()
+        {
+            var values = _experienceService.TGetActiveForUsersPage();
+            return View(values);
+        }
+
+        public ActionResult Skills()
+        {
+            var values = _skillsService.TGetActiveForUsersPage();
+            return View(values);
+        }
+
+        public ActionResult Portfolyo()
+        {
+            var values = _portfolyoService.tGetActiveForUsersPage();
+            return View(values);
+        }
+
+        [HttpGet]
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        //[HttpPost]
+        //public ActionResult Contact() //Contact sınıfı ekle
+        //{
+        //    return View();
+        //}
+        public ActionResult Portfolyo()
+        {
+            var values = _portfolyoService.tGetActiveForUsersPage();
+            return View(values);
+        }
+        public ActionResult Portfolyo()
+        {
+            var values = _portfolyoService.tGetActiveForUsersPage();
+            return View(values);
+        }
+        public ActionResult Portfolyo()
+        {
+            var values = _portfolyoService.tGetActiveForUsersPage();
+            return View(values);
+        }
     }
 }

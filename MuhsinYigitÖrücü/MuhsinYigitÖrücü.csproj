@@ -2411,6 +2411,12 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\ErrorPages\ErrorPageForRolePermission.cshtml" />
     <Content Include="Views\Users\About.cshtml" />
+    <Content Include="Views\SiteLayoutPartialView\HeadPartial.cshtml" />
+    <Content Include="Views\SiteLayoutPartialView\HeaderPartial.cshtml" />
+    <Content Include="Views\SiteLayoutPartialView\ScriptPartial.cshtml" />
+    <Content Include="Views\Users\Experience.cshtml" />
+    <Content Include="Views\Users\Skills.cshtml" />
+    <Content Include="Views\SiteLayoutPartialView\FooterPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
