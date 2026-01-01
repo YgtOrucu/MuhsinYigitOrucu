@@ -1,0 +1,63 @@
+﻿@using EntityLayer.Concreate;
+@model List<Portfolyo>
+
+<style>
+    .gallery-flex {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    /* CARD */
+    .portfolio-card {
+        flex: 1 1 calc(33.333% - 24px);
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+        transition: transform .3s ease;
+    }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+        }
+
+    /* IMAGE AREA */
+    .card-img {
+        width: 100%;
+        height: 220px; /* SABİT */
+        overflow: hidden;
+    }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+    /* TEXT */
+    .card-body {
+        padding: 16px;
+        text-align: center;
+    }
+</style>
+
+<section class="gallery py-md-5 py-3" id="portfolyo">
+    <div class="gallery-inner container py-md-5 pb-3">
+        <h4 class="sub-tittle-w3 text-uppercase text-center">Tümünü Görüntüle</h4>
+        <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Projelerim</h3>
+        <div class="gallery-flex">
+                @foreach (var item in Model)
+                {
+                    <a href="#" class="portfolio-card">
+                        <div class="card-img">
+                            <img src="@(item.Image)">
+                        </div>
+                        <div class="card-body">
+                            <h4>@(item.HeadingName)</h4>
+                        </div>
+                    </a>
+                }
+        </div>
+    </div>
+</section>

@@ -40,54 +40,41 @@ namespace MuhsinYigitÖrücü.Controllers
         }
         #endregion
 
-        public ActionResult About()
+        public ActionResult HomePage()
+        {
+            if (!User.IsInRole("1"))
+            {
+                return RedirectToAction("ErrorPageForRolePermission", "ErrorPages");
+            }
+            else
+            {
+               return View();
+            }
+        }
+
+
+        public PartialViewResult About()
         {
             var values = _aboutService.TGetActiveForUsersPage();
-            return View(values);
+            return PartialView(values);
         }
 
-        public ActionResult Experience()
-        {
-            var values = _experienceService.TGetActiveForUsersPage();
-            return View(values);
-        }
-
-        public ActionResult Skills()
+        public PartialViewResult Skills()
         {
             var values = _skillsService.TGetActiveForUsersPage();
-            return View(values);
+            return PartialView(values);
         }
 
-        public ActionResult Portfolyo()
+        public PartialViewResult Experience()
         {
-            var values = _portfolyoService.tGetActiveForUsersPage();
-            return View(values);
-        }
+            var values = _experienceService.TGetActiveForUsersPage();
+            return PartialView(values);
+        } //Daha sonra tamamlanacak
 
-        [HttpGet]
-        public ActionResult Contact()
-        {
-            return View();
-        }
-        //[HttpPost]
-        //public ActionResult Contact() //Contact sınıfı ekle
-        //{
-        //    return View();
-        //}
-        public ActionResult Portfolyo()
+        public PartialViewResult Portfolyo()
         {
             var values = _portfolyoService.tGetActiveForUsersPage();
-            return View(values);
-        }
-        public ActionResult Portfolyo()
-        {
-            var values = _portfolyoService.tGetActiveForUsersPage();
-            return View(values);
-        }
-        public ActionResult Portfolyo()
-        {
-            var values = _portfolyoService.tGetActiveForUsersPage();
-            return View(values);
+            return PartialView(values);
         }
     }
 }

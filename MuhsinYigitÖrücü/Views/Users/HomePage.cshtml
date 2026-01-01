@@ -2,12 +2,7 @@
 @{
     Layout = null;
 }
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -18,140 +13,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     @Html.Partial("~/Views/SiteLayoutPartialView/HeaderPartial.cshtml")
 
 
-    @RenderBody()
+    @Html.Action("About", "Users")
 
-    <!-- /experience -->
-    <section class="experience py-lg-5 py-4" id="experience">
-        <div class="timeline py-lg-5 py-3">
-            <h4 class="sub-tittle-w3 text-uppercase text-center">Experience</h4>
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Job & Education</h3>
-            <div id="my-timeline"></div>
-        </div>
+    @Html.Action("Skills", "Users")
 
-    </section>
-    <!-- //experience -->
+    @Html.Action("Experience", "Users")
 
-
-
-    <!--gallery  -->
-    <section class="gallery py-md-5 py-3" id="portfolyo">
-        <div class="gallery-inner container py-md-5 pb-3">
-            <h4 class="sub-tittle-w3 text-uppercase text-center">View all</h4>
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">My portfolyo</h3>
-            <div class="row">
-
-                <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-                    <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g1.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g1.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g2.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g2.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g3.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g3.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-                    <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g4.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g4.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g5.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g5.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g6.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g6.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
-                    <div class="section_1_gallery_grid">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g7.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g7.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g8.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g8.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="section_1_gallery_grid" data-aos="zoom-in">
-                        <a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="~/Content/images/g9.jpg">
-                            <div class="section_1_gallery_grid1">
-                                <img src="~/Content/images/g9.jpg" alt=" " class="img-fluid" />
-                                <div class="proj_gallery_grid1_pos">
-                                    <h3>Recognize</h3>
-
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!--end portfolio-area -->
-            </div>
-            <!-- //gallery container -->
-        </div>
-    </section>
-    <!-- //gallery -->
-
-
+    @Html.Action("Portfolyo", "Users")
     <!-- /Contact-->
     <section class="contact py-lg-5 py-md-5 py-3" id="contact">
         <div class="container">
