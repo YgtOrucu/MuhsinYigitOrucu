@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Concreate\About.cs" />
     <Compile Include="Concreate\Admin.cs" />
+    <Compile Include="Concreate\Contact.cs" />
     <Compile Include="Concreate\Education.cs" />
     <Compile Include="Concreate\Experience.cs" />
     <Compile Include="Models\GetImagesByPortfolyoID.cs" />

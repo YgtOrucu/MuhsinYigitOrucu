@@ -18,5 +18,11 @@ namespace MuhsinYigitÖrücü.Controllers
         {
             return View();
         }
+
+        [AllowAnonymous]
+        public ActionResult ErrorPageForAdminLoginInHomePage()
+        {
+            return View();
+        }
     }
 }

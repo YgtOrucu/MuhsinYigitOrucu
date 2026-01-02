@@ -16,7 +16,7 @@ namespace MuhsinYigitÖrücü
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "Users", action = "HomePage", id = UrlParameter.Optional }
             );
         }
     }

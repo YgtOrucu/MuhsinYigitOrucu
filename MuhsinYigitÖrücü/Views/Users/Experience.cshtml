@@ -1,15 +1,115 @@
-﻿@using EntityLayer.Concreate
-@model List<Experience>
+﻿@model MuhsinYigitÖrücü.Models.JobAndExperienceForUsersPage
 
+<style>
+    /* Genel kart düzeni */
+    .custom-card {
+        border: none;
+        border-radius: 12px;
+        background: #eae7ff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 20px;
+    }
 
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
+    /* Başlıklar */
+    .section-title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #333;
+        position: relative;
+    }
 
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #007bff;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+    /* Kart içi başlık */
+    .card-title {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: #007bff;
+    }
+
+    .card-subtitle {
+        font-size: 0.95rem;
+        color: #6c757d;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.6;
+    }
+
+    .date {
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #555;
+    }
+
+    .technologies {
+        font-size: 0.9rem;
+        color: #333;
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 8px;
+    }
+</style>
 <!-- /experience -->
 <section class="experience py-lg-5 py-4" id="experience">
-    <div class="timeline py-lg-5 py-3">
-        <h4 class="sub-tittle-w3 text-uppercase text-center">Experience</h4>
-        <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Job & Education</h3>
-        <div id="my-timeline"></div>
+    <div class="py-lg-5 py-3">
+        <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">İŞ & EĞİTİM</h3>
+
+        <!-- JOB SECTION -->
+        <div class="job-section mb-5">
+            <h4 class="section-title text-uppercase mb-4 text-center">İŞ</h4>
+            <div class="card custom-card">
+                @foreach (var item in Model.Experiences)
+                {
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-briefcase me-2"></i>@item.JobName</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@item.CompanyName</h6>
+                        <span class="date">@item.Date</span>
+                        <p class="card-text mt-3">
+                            @item.Description
+                        </p>
+                        <div class="technologies mt-3">
+                            <strong>Kullanılan Teknolojiler:</strong> @item.Technologies
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+        <!-- EDUCATION SECTION -->
+        <div class="education-section">
+            <h4 class="section-title text-uppercase mb-4 text-center">EĞİTİM</h4>
+            <div class="card custom-card">
+                @foreach (var item in Model.Educations)
+                {
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-graduation-cap me-2"></i>@item.HeadingName</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@(item.SubHeadingName  + " | " + item.SubHeadingName1)</h6>
+                        <span class="date">@(item.Date)</span>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </section>
 <!-- //experience -->

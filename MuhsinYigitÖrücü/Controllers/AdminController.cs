@@ -26,10 +26,11 @@ namespace MuhsinYigitÖrücü.Controllers
         private readonly ISkillsService _skillsService;
         private readonly IPortfolyoService _portfolyoService;
         private readonly IPortfolyoImagesService _portfolyoImagesService;
+        private readonly IContactService _contactService;
 
         public AdminController()
         {
-            _adminService = new AdminManager(new EFAdminDal(), new AdminValidation());
+            _adminService = new AdminManager(new EFAdminDal(), new AdminValidation(), new CheckAdminForLoginValidation());
             _aboutService = new AboutManager(new EFAboutDal(), new AboutValidations());
             _educationService = new EducationManager(new EFEducationDal(), new EducationValidation());
             _experienceService = new ExperienceManager(new EFExperienceDal(), new ExperienceValidation());
@@ -38,6 +39,7 @@ namespace MuhsinYigitÖrücü.Controllers
             _skillsService = new SkillsManager(new EFSkillsDal(), new SkillsValidation());
             _portfolyoService = new PortfolyoManager(new EFPortfolyoDal(), new PortfolyoValidation());
             _portfolyoImagesService = new PortfolyoImagesManager(new EFPortfolyoImagesDal());
+            _contactService = new ContactManager(new EFContactDal());
         }
         #endregion
 
@@ -372,7 +374,7 @@ namespace MuhsinYigitÖrücü.Controllers
         {
             if (!User.IsInRole("1"))
             {
-                if (id == 2) 
+                if (id == 2)
                 {
                     var getmemberss = _adminService.TGetAdminByRoleID(id);
                     return View(getmemberss);
@@ -581,7 +583,7 @@ namespace MuhsinYigitÖrücü.Controllers
                 Text = x.HeadingName
             }).ToList();
             ViewBag.PortfolyoHeading = getvalues;
-           
+
             #endregion
 
             var values = _portfolyoImagesService.TGetImagesByPortfolyoID();
@@ -618,6 +620,19 @@ namespace MuhsinYigitÖrücü.Controllers
             var values = _portfolyoImagesService.TGetAllListImagesByPortfolyoID(id);
             return View(values);
         }
+
+        #endregion
+
+        #region Contact
+
+        #region List
+
+        public ActionResult Contact()
+        {
+            var values = _contactService.TGetAllList();
+            return View(values);
+        }
+        #endregion
 
         #endregion
 

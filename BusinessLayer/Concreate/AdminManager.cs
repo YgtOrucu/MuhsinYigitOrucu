@@ -20,10 +20,12 @@ namespace BusinessLayer.Concreate
     {
         private readonly IAdminDal _adminDal;
         private readonly AdminValidation _validationRulesAdmin;
-        public AdminManager(IAdminDal adminDal, AdminValidation validationRulesAdmin)
+        private readonly CheckAdminForLoginValidation _validationRulesCheckAdminForLoginValidation;
+        public AdminManager(IAdminDal adminDal, AdminValidation validationRulesAdmin, CheckAdminForLoginValidation validationRulesCheckAdminForLoginValidation)
         {
             _adminDal = adminDal;
             _validationRulesAdmin = validationRulesAdmin;
+            _validationRulesCheckAdminForLoginValidation = validationRulesCheckAdminForLoginValidation;
         }
         public List<Admin> TGetAllList()
         {
@@ -60,6 +62,13 @@ namespace BusinessLayer.Concreate
 
         public List<Admin> TCheckAdminForLogin(string mail, string password)
         {
+            Admin admin = new Admin
+            {
+                MailAddress = mail,
+                Password = password
+            };
+            var result = _validationRulesCheckAdminForLoginValidation.Validate(admin);
+            if (!result.IsValid) throw new ValidationException(result.Errors);
             return _adminDal.CheckAdminForLogin(mail, password);
         }
     }

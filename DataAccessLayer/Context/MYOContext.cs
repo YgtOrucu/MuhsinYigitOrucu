@@ -20,6 +20,7 @@ namespace DataAccessLayer.Context
         public DbSet<Skills> Skills { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Experience> Experiences { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -33,6 +34,7 @@ namespace DataAccessLayer.Context
             modelBuilder.Configurations.Add(new SkillsConfig());
             modelBuilder.Configurations.Add(new SocialMediaConfig());
             modelBuilder.Configurations.Add(new ExperienceConfig());
+            modelBuilder.Configurations.Add(new ContactConfig());
         }
     }
 }

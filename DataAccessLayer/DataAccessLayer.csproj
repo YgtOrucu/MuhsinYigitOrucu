@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
     <Compile Include="Abstract\IAdminDal.cs" />
+    <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IEducationDal.cs" />
     <Compile Include="Abstract\IExperienceDal.cs" />
     <Compile Include="Abstract\IGenericDal.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Abstract\ISocialMediaDal.cs" />
     <Compile Include="Configuration\AboutConfig.cs" />
     <Compile Include="Configuration\AdminConfig.cs" />
+    <Compile Include="Configuration\ContactConfig.cs" />
     <Compile Include="Configuration\EducationConfig.cs" />
     <Compile Include="Configuration\ExperienceConfig.cs" />
     <Compile Include="Configuration\PortfolyoConfig.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Context\MYOContext.cs" />
     <Compile Include="EFramework\EFAboutDal.cs" />
     <Compile Include="EFramework\EFAdminDal.cs" />
+    <Compile Include="EFramework\EFContactDal.cs" />
     <Compile Include="EFramework\EFEducationDal.cs" />
     <Compile Include="EFramework\EFExperienceDal.cs" />
     <Compile Include="EFramework\EFPortfolyoDal.cs" />
@@ -109,6 +112,10 @@
     <Compile Include="Migrations\202512291542498_AddedStatusColumnToPortfolyoImageTable.Designer.cs">
       <DependentUpon>202512291542498_AddedStatusColumnToPortfolyoImageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202601021321157_CreatedContactTable.cs" />
+    <Compile Include="Migrations\202601021321157_CreatedContactTable.Designer.cs">
+      <DependentUpon>202601021321157_CreatedContactTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512291542498_AddedStatusColumnToPortfolyoImageTable.resx">
       <DependentUpon>202512291542498_AddedStatusColumnToPortfolyoImageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202601021321157_CreatedContactTable.resx">
+      <DependentUpon>202601021321157_CreatedContactTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

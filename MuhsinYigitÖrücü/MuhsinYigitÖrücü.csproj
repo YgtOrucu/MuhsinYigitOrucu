@@ -2036,6 +2036,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\JobAndExperienceForUsersPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleProviders\AdminRoleProvider.cs" />
   </ItemGroup>
@@ -2418,6 +2419,9 @@
     <Content Include="Views\Users\Skills.cshtml" />
     <Content Include="Views\Users\Experience.cshtml" />
     <Content Include="Views\Users\Portfolyo.cshtml" />
+    <Content Include="Views\Users\Contact.cshtml" />
+    <Content Include="Views\Users\LoginPage.cshtml" />
+    <Content Include="Views\ErrorPages\ErrorPageForAdminLoginInHomePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2427,7 +2431,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">

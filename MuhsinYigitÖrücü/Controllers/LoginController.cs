@@ -9,18 +9,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Razor;
 using System.Web.Security;
+using System.Web.UI.HtmlControls;
 
 namespace MuhsinYigitÖrücü.Controllers
 {
-    [AllowAnonymous]
+
     public class LoginController : Controller
     {
         private readonly IAdminService _adminService;
 
         public LoginController()
         {
-            _adminService = new AdminManager(new EFAdminDal(), new AdminValidation());
+            _adminService = new AdminManager(new EFAdminDal(), new AdminValidation(), new CheckAdminForLoginValidation());
         }
 
         [HttpGet]
@@ -29,6 +31,7 @@ namespace MuhsinYigitÖrücü.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(Admin a)
         {
@@ -59,22 +62,25 @@ namespace MuhsinYigitÖrücü.Controllers
             }
             catch (ValidationException ex)
             {
-                if (ex.Errors.Count() != 0)
+                if (ex.Errors.Any())
                 {
                     foreach (var item in ex.Errors)
                     {
                         ModelState.AddModelError("", item.ErrorMessage);
                     }
+
+                    TempData["ErrorMessage"] = string.Join(",", ex.Errors.Select(x => x.ErrorMessage));
                 }
                 else
                 {
                     ModelState.AddModelError("", ex.Message);
+                    TempData["ErrorMessage"] = ex.Message;
                 }
-                return View("Login");
+
+                TempData["RedirectToAction"] = "/Users/HomePage";
+                return RedirectToAction("ErrorPageForAdminLoginInHomePage", "ErrorPages");
             }
         }
-
-
 
 
         public ActionResult Logout()
