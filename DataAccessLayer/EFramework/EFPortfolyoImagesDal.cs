@@ -28,7 +28,7 @@ namespace DataAccessLayer.EFramework
         public List<GetImagesByPortfolyoID> GetImagesByPortfolyoID()
         {
             var values = context.PortfolyoImages
-                .Where(i => i.Images != null)
+                .Where(i => i.Images != null && i.Status == true)
                 .GroupBy(i => i.Portfolyo)
                 .Select(g => new GetImagesByPortfolyoID
                 {

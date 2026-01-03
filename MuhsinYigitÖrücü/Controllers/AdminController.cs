@@ -531,7 +531,7 @@ namespace MuhsinYigitÖrücü.Controllers
                 var uploadedFile = Request.Files["Image"];
                 if (uploadedFile != null && uploadedFile.ContentLength > 0)
                 {
-                    var resource = Server.MapPath("~/Content/images/MvcProjeKampı");
+                    var resource = Server.MapPath("~/Content/images/KısıselCV");
                     var extension = Path.GetExtension(uploadedFile.FileName);
                     var imageName = Guid.NewGuid() + extension;
                     var saveLocation = Path.Combine(resource, imageName);
@@ -547,7 +547,7 @@ namespace MuhsinYigitÖrücü.Controllers
                     }
 
                     uploadedFile.SaveAs(saveLocation);
-                    p.Image = "/Content/images/MvcProjeKampı/" + imageName;
+                    p.Image = "/Content/images/KısıselCV/" + imageName;
                 }
 
                 _portfolyoService.TInsert(p);
@@ -625,7 +625,7 @@ namespace MuhsinYigitÖrücü.Controllers
             var uploadedFile = Request.Files["Image"];
             if (uploadedFile != null && uploadedFile.ContentLength > 0)
             {
-                var resource = Server.MapPath("~/Content/images/MvcProjeKampı");
+                var resource = Server.MapPath("~/Content/images/KısıselCV");
                 var extension = Path.GetExtension(uploadedFile.FileName);
                 var imageName = Guid.NewGuid() + extension;
                 var saveLocation = Path.Combine(resource, imageName);
@@ -641,7 +641,7 @@ namespace MuhsinYigitÖrücü.Controllers
                 }
 
                 uploadedFile.SaveAs(saveLocation);
-                p.Images = "/Content/images/MvcProjeKampı/" + imageName;
+                p.Images = "/Content/images/KısıselCV/" + imageName;
             }
             p.Status = true;
             _portfolyoImagesService.TInsert(p);
