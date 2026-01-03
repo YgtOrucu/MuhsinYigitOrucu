@@ -2422,6 +2422,9 @@
     <Content Include="Views\Users\Contact.cshtml" />
     <Content Include="Views\Users\LoginPage.cshtml" />
     <Content Include="Views\ErrorPages\ErrorPageForAdminLoginInHomePage.cshtml" />
+    <Content Include="Views\Admin\Contact.cshtml" />
+    <Content Include="Views\Admin\LeftBarArea.cshtml" />
+    <Content Include="Views\Admin\ContactDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2431,6 +2434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\MvcProjeKampı\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">

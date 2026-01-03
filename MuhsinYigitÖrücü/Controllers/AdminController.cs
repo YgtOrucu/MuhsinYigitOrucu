@@ -7,6 +7,7 @@ using EntityLayer.Concreate;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -520,10 +521,35 @@ namespace MuhsinYigitÖrücü.Controllers
 
         #region Add
 
+
+        [HttpPost]
         public ActionResult PortfolyoAdd(Portfolyo p)
         {
             try
             {
+
+                var uploadedFile = Request.Files["Image"];
+                if (uploadedFile != null && uploadedFile.ContentLength > 0)
+                {
+                    var resource = Server.MapPath("~/Content/images/MvcProjeKampı");
+                    var extension = Path.GetExtension(uploadedFile.FileName);
+                    var imageName = Guid.NewGuid() + extension;
+                    var saveLocation = Path.Combine(resource, imageName);
+
+                    // Delete old image if exists
+                    if (!string.IsNullOrEmpty(p.Image))
+                    {
+                        var oldImagePath = Server.MapPath(p.Image);
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    uploadedFile.SaveAs(saveLocation);
+                    p.Image = "/Content/images/MvcProjeKampı/" + imageName;
+                }
+
                 _portfolyoService.TInsert(p);
                 return RedirectToAction("Portfolyo");
             }
@@ -589,7 +615,6 @@ namespace MuhsinYigitÖrücü.Controllers
             var values = _portfolyoImagesService.TGetImagesByPortfolyoID();
             return View(values);
         }
-
         #endregion
 
         #region Add
@@ -597,6 +622,28 @@ namespace MuhsinYigitÖrücü.Controllers
         [HttpPost]
         public ActionResult PortfolyoImagesAdd(PortfolyoImages p)
         {
+            var uploadedFile = Request.Files["Image"];
+            if (uploadedFile != null && uploadedFile.ContentLength > 0)
+            {
+                var resource = Server.MapPath("~/Content/images/MvcProjeKampı");
+                var extension = Path.GetExtension(uploadedFile.FileName);
+                var imageName = Guid.NewGuid() + extension;
+                var saveLocation = Path.Combine(resource, imageName);
+
+                // Delete old image if exists
+                if (!string.IsNullOrEmpty(p.Images))
+                {
+                    var oldImagePath = Server.MapPath(p.Images);
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+
+                uploadedFile.SaveAs(saveLocation);
+                p.Images = "/Content/images/MvcProjeKampı/" + imageName;
+            }
+            p.Status = true;
             _portfolyoImagesService.TInsert(p);
             return RedirectToAction("PortfolyoImages");
         }
@@ -626,6 +673,24 @@ namespace MuhsinYigitÖrücü.Controllers
         #region Contact
 
         #region List
+
+        public PartialViewResult LeftBarArea()
+        {
+            var values = context.Contacts.Count();
+            @ViewBag.ınboxcount = values;
+            return PartialView();
+        }
+
+        public ActionResult ContactDetails(int id)
+        {
+            if (!User.IsInRole("1"))
+            {
+                TempData["Error"] = "Bu sayfayı görüntüleme yetkisine sahip değilsiniz";
+                return RedirectToAction("ErrorPageForRolePermission", "ErrorPages");
+            }
+            var getcontactdetails = _contactService.TGetByID(id);
+            return View(getcontactdetails);
+        }
 
         public ActionResult Contact()
         {

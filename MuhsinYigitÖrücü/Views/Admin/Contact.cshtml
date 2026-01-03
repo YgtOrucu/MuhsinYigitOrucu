@@ -1,0 +1,51 @@
+﻿@using EntityLayer.Concreate
+@model List<Contact>
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3">
+                @Html.Action("LeftBarArea", "Admin")
+            </div>
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Mesaj Kutusu</h3>
+                        <div class="card-tools"> 
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive mailbox-messages">
+                            <table class="table table-hover table-striped">
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="~/Admin/ContactDetails/@item.ContactID">@item.NameSurname</a></td>
+                                            <td class="mailbox-subject">
+                                                <b>@item.Subject</b> - @item.Description.Substring(0, 30) ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-read-time">@item.Mail</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+

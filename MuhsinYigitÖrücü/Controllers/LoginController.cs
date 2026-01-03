@@ -87,7 +87,7 @@ namespace MuhsinYigitÖrücü.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Login", "Login");
+            return RedirectToAction("HomePage", "Users");
         }
     }
 }

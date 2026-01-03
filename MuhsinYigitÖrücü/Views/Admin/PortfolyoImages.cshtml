@@ -15,10 +15,10 @@
                         Heading Name
                     </th>
 
-                    <th style="width:40%">
+                    <th style="width:60%">
                         Images
                     </th>
-                    <th style="width:30%">
+                    <th style="width:20%">
                     </th>
                 </tr>
             </thead>
@@ -68,12 +68,12 @@
                 <h2 class="modal-title" id="modal1Label" style="margin:0 0 0 9rem">Add PortfolyoImages</h2>
             </div>
 
-            <form method="post" action="~/Admin/PortfolyoImagesAdd">
+            <form method="post" action="~/Admin/PortfolyoImagesAdd" enctype="multipart/form-data">
                 <div class="modal-body">
 
                     <div class="mb-3">
                         <label for="Images" class="form-label">Image Url</label>
-                        <input type="text" name="Images" id="Images" class="form-control">
+                        <input type="file" name="Image" class="form-control" />
                     </div>
 
                     <div class="mb-3">

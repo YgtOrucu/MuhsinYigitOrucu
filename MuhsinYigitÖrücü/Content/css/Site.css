@@ -269,22 +269,33 @@
         color: #fff;
     }
 
+/* Contact – blue (external) */
+.nav-sidebar > .nav-item:nth-child(7) .nav-link:hover {
+    background: rgba(20, 184, 166, .18) !important;
+}
+
+    .nav-sidebar > .nav-item:nth-child(7) .nav-link:hover .nav-icon {
+        background: #14b8a6;
+        color: #fff;
+    }
+
+
 /* Go to Website – blue (external) */
-.nav-sidebar > .nav-item:nth-child(10) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(11) .nav-link:hover {
     background: rgba(59, 130, 246, .18) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(10) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(11) .nav-link:hover .nav-icon {
         background: #3b82f6;
         color: #fff;
     }
 
 /* Logout – red (danger) */
-.nav-sidebar > .nav-item:nth-child(11) .nav-link:hover {
+.nav-sidebar > .nav-item:nth-child(12) .nav-link:hover {
     background: rgba(239, 68, 68, .2) !important;
 }
 
-    .nav-sidebar > .nav-item:nth-child(11) .nav-link:hover .nav-icon {
+    .nav-sidebar > .nav-item:nth-child(12) .nav-link:hover .nav-icon {
         background: #ef4444;
         color: #fff;
     }

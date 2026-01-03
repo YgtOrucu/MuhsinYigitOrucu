@@ -8,7 +8,6 @@
         flex-wrap: wrap;
     }
 
-    /* CARD */
     .portfolio-card {
         flex: 1 1 calc(33.333% - 24px);
         background: #fff;
@@ -22,10 +21,9 @@
             transform: translateY(-6px);
         }
 
-    /* IMAGE AREA */
     .card-img {
         width: 100%;
-        height: 220px; /* SABİT */
+        height: 220px;
         overflow: hidden;
     }
 
@@ -35,7 +33,6 @@
             display: block;
         }
 
-    /* TEXT */
     .card-body {
         padding: 16px;
         text-align: center;
@@ -47,17 +44,20 @@
         <h4 class="sub-tittle-w3 text-uppercase text-center">Tümünü Görüntüle</h4>
         <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Projelerim</h3>
         <div class="gallery-flex">
-                @foreach (var item in Model)
-                {
-                    <a href="#" class="portfolio-card">
-                        <div class="card-img">
-                            <img src="@(item.Image)">
-                        </div>
-                        <div class="card-body">
-                            <h4>@(item.HeadingName)</h4>
-                        </div>
-                    </a>
-                }
+            @foreach (var item in Model)
+            {
+                <a href="javascript:void(0)" class="portfolio-card"
+                   data-id="@item.PortfolyoID"
+                   data-bs-toggle="modal"
+                   data-bs-target="#portfolioModal">
+                    <div class="card-img">
+                        <img src="@item.Image" />
+                    </div>
+                    <div class="card-body">
+                        <h4>@item.HeadingName</h4>
+                    </div>
+                </a>
+            }
         </div>
     </div>
 </section>
