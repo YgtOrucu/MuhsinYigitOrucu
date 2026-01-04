@@ -15,6 +15,9 @@
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0,0,0,.08);
         transition: transform .3s ease;
+        padding:5px;
+        cursor:pointer;
+
     }
 
         .portfolio-card:hover {
@@ -46,17 +49,18 @@
         <div class="gallery-flex">
             @foreach (var item in Model)
             {
-                <a href="javascript:void(0)" class="portfolio-card"
-                   data-id="@item.PortfolyoID"
-                   data-bs-toggle="modal"
-                   data-bs-target="#portfolioModal">
+                <button type="button"
+                        class="portfolio-card btnPortfolio"
+                        data-id="@item.PortfolyoID">
+
                     <div class="card-img">
                         <img src="@item.Image" />
                     </div>
+
                     <div class="card-body">
                         <h4>@item.HeadingName</h4>
                     </div>
-                </a>
+                </button>
             }
         </div>
     </div>

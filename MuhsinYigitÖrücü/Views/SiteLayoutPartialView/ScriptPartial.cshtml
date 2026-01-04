@@ -167,3 +167,31 @@
 <!-- //js -->
 
 <script src="~/Content/js/bootstrap.js"></script>
+
+<script>
+    $(document).on("click", ".btnPortfolio", function () {
+
+        let portfolyoId = $(this).data("id");
+
+        $.ajax({
+            url: "/Users/GetPortfolyoImages",
+            type: "GET",
+            data: { id: portfolyoId },
+            success: function (images) {
+
+                let html = "";
+
+                $.each(images, function (index, img) {
+                    html += `
+                <div class="carousel-item ${index === 0 ? "active" : ""}">
+                    <img src="${img}" class="d-block w-100" style="height:80vh; object-fit:contain;">
+                </div>`;
+                });
+
+                $("#carouselImages").html(html);
+                $("#portfolioModal").modal("show");
+            }
+        });
+    });
+
+</script>

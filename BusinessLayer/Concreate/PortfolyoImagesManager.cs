@@ -49,6 +49,11 @@ namespace BusinessLayer.Concreate
             return _portfolyoImagesDal.GetListByFilter(filter);
         }
 
+        public List<string> TGetPortfolyoImagesByPortfolyoID(int id)
+        {
+            return _portfolyoImagesDal.GetPortfolyoImagesByPortfolyoID(id);
+        }
+
         public void TInsert(PortfolyoImages entity)
         {
             _portfolyoImagesDal.Insert(entity);

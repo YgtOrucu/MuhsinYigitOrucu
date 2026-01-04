@@ -15,5 +15,6 @@ namespace DataAccessLayer.Abstract
         List<PortfolyoImages> GetAllListImagesByPortfolyoID(int id);
 
         List<PortfolyoImages> GetActiveForUsersPage();
+        List<string> GetPortfolyoImagesByPortfolyoID(int id);
     }
 }

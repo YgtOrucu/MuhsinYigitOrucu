@@ -41,5 +41,14 @@ namespace DataAccessLayer.EFramework
             return values;
         }
 
+        public List<string> GetPortfolyoImagesByPortfolyoID(int id)
+        {
+            var images = context.PortfolyoImages
+                                 .Where(x => x.PortfolyoID == id && x.Status == true)
+                                 .Select(x => x.Images)
+                                 .ToList();
+
+            return images;
+        }
     }
 }

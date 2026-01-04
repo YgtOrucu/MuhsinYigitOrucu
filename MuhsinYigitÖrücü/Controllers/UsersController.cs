@@ -73,6 +73,12 @@ namespace MuhsinYigitÖrücü.Controllers
             return PartialView(values);
         }
 
+        public ActionResult GetPortfolyoImages(int id)
+        {
+            var images = _portfolyoImagesService.TGetPortfolyoImagesByPortfolyoID(id);
+            return Json(images, JsonRequestBehavior.AllowGet);
+        }
+
         public PartialViewResult Contact()
         {
             return PartialView();
