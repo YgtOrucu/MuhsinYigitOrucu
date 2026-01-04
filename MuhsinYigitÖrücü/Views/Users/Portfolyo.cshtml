@@ -15,9 +15,7 @@
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0,0,0,.08);
         transition: transform .3s ease;
-        padding:5px;
-        cursor:pointer;
-
+        padding: 5px;
     }
 
         .portfolio-card:hover {
@@ -28,6 +26,7 @@
         width: 100%;
         height: 220px;
         overflow: hidden;
+        cursor: pointer;
     }
 
         .card-img img {
@@ -50,16 +49,16 @@
             @foreach (var item in Model)
             {
                 <button type="button"
-                        class="portfolio-card btnPortfolio"
-                        data-id="@item.PortfolyoID">
+                        class="portfolio-card">
 
-                    <div class="card-img">
+                    <div class="card-img btnPortfolio" data-id="@item.PortfolyoID">
                         <img src="@item.Image" />
                     </div>
 
                     <div class="card-body">
                         <h4>@item.HeadingName</h4>
                     </div>
+                    GitHub : <a href="@(item.GitHubUrl)" target="_blank" rel="noopener noreferrer">@(item.HeadingName)</a>
                 </button>
             }
         </div>

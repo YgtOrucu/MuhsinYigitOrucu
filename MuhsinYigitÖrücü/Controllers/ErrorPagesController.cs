@@ -24,5 +24,11 @@ namespace MuhsinYigitÖrücü.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public ActionResult Error404()
+        {
+            Response.StatusCode = 404;
+            return View();
+        }
     }
 }

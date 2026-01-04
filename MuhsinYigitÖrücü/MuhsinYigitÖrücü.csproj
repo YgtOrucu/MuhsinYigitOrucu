@@ -2385,6 +2385,7 @@
     <Content Include="Content\Login_v1\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Content\Login_v1\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\Login_v1\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\CV\MuhsinYiğitÖrücüCV.pdf" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
@@ -2426,6 +2427,7 @@
     <Content Include="Views\Admin\LeftBarArea.cshtml" />
     <Content Include="Views\Admin\ContactDetails.cshtml" />
     <Content Include="Views\SiteLayoutPartialView\PortfolyoImageCarouselModalPartial.cshtml" />
+    <Content Include="Views\ErrorPages\Error404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

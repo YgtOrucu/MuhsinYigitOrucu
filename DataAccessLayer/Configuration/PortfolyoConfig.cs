@@ -16,6 +16,7 @@ namespace DataAccessLayer.Configuration
             HasKey(x => x.PortfolyoID);
             Property(x => x.PortfolyoID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.HeadingName).HasColumnType("varchar").HasMaxLength(25);
+            Property(x => x.GitHubUrl).HasColumnType("varchar").HasMaxLength(45);
             Property(x => x.Image).HasColumnType("varchar").HasMaxLength(250);
         }
     }

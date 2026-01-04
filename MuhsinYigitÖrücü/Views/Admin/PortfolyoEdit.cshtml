@@ -16,6 +16,11 @@
         </div>
 
         <div class="mb-3">
+            <label for="GitHubUrl" class="form-label">GitHub Url</label>
+            @Html.TextBoxFor(x => x.GitHubUrl, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
             <label for="RoleType" class="form-label">Image Url</label>
             @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
         </div>

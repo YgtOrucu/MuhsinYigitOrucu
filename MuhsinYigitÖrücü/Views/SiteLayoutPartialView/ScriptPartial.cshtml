@@ -137,6 +137,7 @@
 <script>
      jQuery(document).ready(function ($) {
          $(".scroll").click(function (event) {
+             if (!this.hash) return;
              event.preventDefault();
              $('html,body').animate({
                  scrollTop: $(this.hash).offset().top

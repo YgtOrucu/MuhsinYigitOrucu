@@ -45,18 +45,21 @@ namespace MuhsinYigitÖrücü.Controllers
             return View();
         }
 
+        [ChildActionOnly]
         public PartialViewResult About()
         {
             var values = _aboutService.TGetActiveForUsersPage();
             return PartialView(values);
         }
 
+        [ChildActionOnly]
         public PartialViewResult Skills()
         {
             var values = _skillsService.TGetActiveForUsersPage();
             return PartialView(values);
         }
 
+        [ChildActionOnly]
         public PartialViewResult Experience()
         {
             JobAndExperienceForUsersPage jobAndExperience = new JobAndExperienceForUsersPage
@@ -65,8 +68,9 @@ namespace MuhsinYigitÖrücü.Controllers
                 Experiences = _experienceService.TGetActiveForUsersPage()
             };
             return PartialView(jobAndExperience);
-        } 
+        }
 
+        [ChildActionOnly]
         public PartialViewResult Portfolyo()
         {
             var values = _portfolyoService.tGetActiveForUsersPage();
@@ -79,6 +83,7 @@ namespace MuhsinYigitÖrücü.Controllers
             return Json(images, JsonRequestBehavior.AllowGet);
         }
 
+        [ChildActionOnly]
         public PartialViewResult Contact()
         {
             return PartialView();
@@ -91,9 +96,16 @@ namespace MuhsinYigitÖrücü.Controllers
             return RedirectToAction("HomePage");
         }
 
+        [ChildActionOnly]
         public PartialViewResult LoginPage()
         {
             return PartialView();
+        }
+
+        public ActionResult ViewCv()
+        {
+            var path = Server.MapPath("~/Content/CV/MuhsinYiğitÖrücüCV.pdf");
+            return File(path, "application/pdf");
         }
     }
 }

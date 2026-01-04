@@ -116,6 +116,10 @@
     <Compile Include="Migrations\202601021321157_CreatedContactTable.Designer.cs">
       <DependentUpon>202601021321157_CreatedContactTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202601040944061_AddedGitHubUrlColumnToPortfolyoTable.cs" />
+    <Compile Include="Migrations\202601040944061_AddedGitHubUrlColumnToPortfolyoTable.Designer.cs">
+      <DependentUpon>202601040944061_AddedGitHubUrlColumnToPortfolyoTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202601021321157_CreatedContactTable.resx">
       <DependentUpon>202601021321157_CreatedContactTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202601040944061_AddedGitHubUrlColumnToPortfolyoTable.resx">
+      <DependentUpon>202601040944061_AddedGitHubUrlColumnToPortfolyoTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

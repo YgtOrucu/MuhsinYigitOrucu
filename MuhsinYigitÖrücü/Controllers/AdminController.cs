@@ -581,6 +581,7 @@ namespace MuhsinYigitÖrücü.Controllers
 
                 updatedPortfolyo.HeadingName = p.HeadingName;
                 updatedPortfolyo.Image = p.Image;
+                updatedPortfolyo.GitHubUrl = p.GitHubUrl;
                 updatedPortfolyo.Status = p.Status;
                 _portfolyoService.TUpdate(updatedPortfolyo);
                 return RedirectToAction("Portfolyo");

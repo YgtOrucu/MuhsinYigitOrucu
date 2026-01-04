@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = null;
+    var code = Response.StatusCode;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bir Şeyler Ters Gitti</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .error-box {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            opacity: 0.2;
+        }
+
+        .error-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .error-desc {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .btn-home {
+            padding: 12px 28px;
+            background: #00c6ff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+            .btn-home:hover {
+                background: #fff;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="error-box">
+        <div class="error-code">@code</div>
+            <div class="error-title">Sayfa Bulunamadı</div>
+            <div class="error-desc">
+                Aradığınız sayfa kullanılmamaktadır.Lütfen adresi kontrol ediniz.
+            </div>
+        <a href="/Users/HomePage" class="btn-home">Ana Sayfaya Dön</a>
+    </div>
+
+</body>
+</html>

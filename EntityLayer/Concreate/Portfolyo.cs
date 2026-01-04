@@ -15,5 +15,6 @@ namespace EntityLayer.Concreate
         public string Image { get; set; }
         public bool Status { get; set; }
         public virtual ICollection<PortfolyoImages> PortfolyoImages { get; set; }
+        public string GitHubUrl { get; set; }
     }
 }
